@@ -1,7 +1,6 @@
-import ComingSoon from "@/components/ComingSoon";
-import { brandUnits } from "@/lib/brand-units";
+import DetailPage from "@/components/detail/DetailPage";
+import { wellnessContent } from "@/lib/detail-pages/wellness";
 
 export default function WellnessPage() {
-  const unit = brandUnits.find((u) => u.slug === "wellness")!;
-  return <ComingSoon unit={unit} />;
+  return <DetailPage content={wellnessContent} />;
 }
