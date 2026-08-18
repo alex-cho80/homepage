@@ -18,23 +18,6 @@ export default function BrandUnitCard({ unit }: { unit: BrandUnit }) {
         {unit.name}
       </h3>
       <p className="mt-2 text-sm text-slate-600">{unit.connectPhrase}</p>
-      {unit.position && (
-        <div className="mt-5 border-t border-slate-100 pt-5">
-          <p className="border-l-2 border-connectx-blue pl-3 text-sm font-semibold text-connectx-navy">
-            {unit.position}
-          </p>
-          <ul className="mt-3 space-y-1.5 pl-3 text-xs leading-relaxed text-slate-500">
-            {unit.positionDetails?.map((detail) => (
-              <li key={detail} className="flex gap-2">
-                <span aria-hidden className="text-connectx-blue">
-                  ·
-                </span>
-                <span>{detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </Link>
   );
 }
