@@ -1,7 +1,6 @@
-import ComingSoon from "@/components/ComingSoon";
-import { brandUnits } from "@/lib/brand-units";
+import DetailPage from "@/components/detail/DetailPage";
+import { academyContent } from "@/lib/detail-pages/academy";
 
 export default function AcademyPage() {
-  const unit = brandUnits.find((u) => u.slug === "academy")!;
-  return <ComingSoon unit={unit} />;
+  return <DetailPage content={academyContent} />;
 }
