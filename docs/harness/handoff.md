@@ -63,3 +63,34 @@ append-only. 각 항목: 날짜 / 담당(팀) / 무엇을 했는지 / 다음에 
   카테고리/팀 프로필/실적 자료를 확보해 placeholder 교체. Wellness는
   카피 확정 전 건강기능식품 표시광고 관련 법무 검토 필요(마케팅 기획서
   기존 플래그 유지).
+
+## 2026-08-18 — Claude Code → Codex(CTO) 인계: 이미지 작업
+
+사용자가 "텍스트 위주라 단조롭다"는 피드백을 두 번 주었다. 1차로 Claude
+Code가 브랜드 컬러 기반 커스텀 SVG 일러스트/아이콘을 코드로 직접 그려
+추가했지만(아래 "적용된 것" 참고), 그래도 부족하다는 피드백을 받았다.
+Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 만들 수
+없음) 사용자가 이 작업을 **Codex가 담당**하는 것으로 역할을 분리하기로
+결정함 (`docs/harness/decisions.md` 참고).
+
+**이미 적용된 것 (SVG, Claude Code):**
+- `public/logo.png` — 사용자가 제공한 로고 파일, Header 좌상단에 사용 중
+- `components/illustrations/HeroIllustration.tsx` — 추상 기하학 SVG
+  일러스트 4종 (landing/academy/advisory/wellness), 각 히어로 섹션에 삽입
+- `components/icons/AxisIcon.tsx` — 3축 연결 카드용 소형 SVG 아이콘 3종
+
+**Codex에게 요청하는 것 — 실제 이미지(사진/AI 생성 이미지 등) 슬롯:**
+
+| 페이지 | 위치 | 권장 형태 |
+|---|---|---|
+| 랜딩(`/`) | Hero 섹션, 현재 SVG 마크 자리 또는 그 주변 | 브랜드 톤(전문적/신뢰감)에 맞는 인프라·보안·연결을 은유하는 이미지 |
+| Academy(`/academy`) | Hero 우측 (현재 SVG 자리), `components/detail/Hero.tsx` | 교육/실습 현장을 연상시키는 이미지 |
+| Advisory(`/advisory`) | Hero 우측 (현재 SVG 자리) | 기업 컨설팅/인프라 진단을 연상시키는 이미지 |
+| Wellness(`/wellness`) | Hero 우측 (현재 SVG 자리) | 건강기능식품/맞춤 추천을 연상시키는 이미지 (의약품 오인 표현·이미지 지양) |
+
+**전달 방법 제안:** 이미지 파일을 `public/images/`에 넣고(예:
+`public/images/academy-hero.jpg`), 어떤 파일을 어느 자리에 썼는지
+`docs/harness/handoff.md`에 append로 알려주면 Claude Code가 다음 세션에서
+`components/detail/Hero.tsx` 등에 배치를 이어받는다. 혹은 Codex가 직접
+코드까지 수정해도 무방함 — 이 저장소는 공유 저장소이므로 커밋 히스토리로
+서로 확인 가능.

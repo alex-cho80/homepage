@@ -16,6 +16,12 @@
 - **호스팅**: GitHub Pages (정적 export, `output: "export"`) + 가비아에서
   구매한 connectx.kr 커스텀 도메인. `.github/workflows/deploy.yml`이 main
   push마다 자동 빌드/배포. (2026-08-18)
+- **이미지 제작 담당 분리**: Claude Code(개발/디자인팀장)는 코드로 직접 그리는
+  벡터(SVG) 그래픽까지만 담당하고, 사진/AI 생성 이미지 등 래스터 이미지
+  제작은 Codex(CTO)가 담당하기로 함. 이유: Claude Code에는 이미지 생성
+  도구가 없고, 사용자가 "텍스트 위주라 단조롭다"는 피드백을 반복해서
+  SVG 일러스트만으로는 부족하다고 판단, 사용자가 직접 역할 분리를 요청함.
+  (2026-08-18)
 - **npm audit 취약점(5건, 전부 high) 방치 결정**: 전부 `next` 14.2.35 →
   16.3.1(메이저 2단계) 강제 업그레이드로만 해결 가능. 취약점 내용(Server
   Actions DoS, Middleware SSRF, RSC 캐시 오염 등)은 전부 Next.js를
