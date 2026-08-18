@@ -2,7 +2,7 @@ import type { CtaContent } from "@/lib/detail-pages/types";
 
 function externalProps(href: string) {
   return href.startsWith("http")
-    ? { target: "_blank", rel: "noopener noreferrer" }
+    ? { target: "_blank", rel: "noopener" }
     : {};
 }
 
