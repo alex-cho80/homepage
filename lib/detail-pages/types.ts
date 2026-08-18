@@ -6,6 +6,7 @@ export type HeroContent = {
   subtitle: string;
   positionBadge?: string;
   ctas: { label: string; href: string }[];
+  illustration: "academy" | "advisory" | "wellness";
 };
 
 export type ProblemContent = {

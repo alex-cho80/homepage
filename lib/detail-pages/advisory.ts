@@ -14,6 +14,7 @@ export const advisoryContent: DetailPageContent = {
         { label: "무료 진단 신청", href: "#cta" },
         { label: "서비스 영역 보기", href: "#offerings" },
       ],
+      illustration: "advisory",
     },
     {
       type: "positionDetail",

@@ -13,6 +13,7 @@ export const academyContent: DetailPageContent = {
         { label: "커리큘럼 살펴보기", href: "#offerings" },
         { label: "상담 신청하기", href: "#cta" },
       ],
+      illustration: "academy",
     },
     {
       type: "problem",
