@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ConnectX",
+  title: { default: "ConnectX", template: "%s | ConnectX" },
   description: "진단 → 큐레이션/설계 → 실행 → 지속관리",
 };
 
