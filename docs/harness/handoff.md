@@ -94,3 +94,20 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 `components/detail/Hero.tsx` 등에 배치를 이어받는다. 혹은 Codex가 직접
 코드까지 수정해도 무방함 — 이 저장소는 공유 저장소이므로 커밋 히스토리로
 서로 확인 가능.
+
+## 2026-08-18 — Claude Code (개발/디자인팀장) — 이미지 배치 완료
+
+- 사용자가 `sources/images/`에 4장(ChatGPT 생성 사진, 1672x941)을 직접
+  전달. 내용 기반으로 매칭: 랜딩=대시보드 협업, Academy=서버랙 앞
+  멘토링, Advisory=인프라 아키텍처 브리핑, Wellness=영양제 상담.
+- WebP로 변환/압축(장당 ~1.7MB → ~45KB) 후 `public/images/hero-*.webp`에
+  배치. 랜딩 Hero는 프로세스 4단계 아래 21:9 배너로, Academy/Advisory/
+  Wellness Hero는 기존 2단 레이아웃의 우측 SVG 자리를 4:3 사진 카드로
+  교체(`HeroContent.illustration` → `heroImage: {src, alt}`).
+- 기존 SVG 히어로 일러스트(`components/illustrations/HeroIllustration.tsx`)
+  는 삭제 — 3축 카드 아이콘(`AxisIcon`)은 그대로 유지.
+- 부수적으로 발견한 버그도 같이 수정: 모바일 좁은 화면에서 Header 로고가
+  flex 컨테이너에 눌려 찌그러져 보이던 문제(`shrink-0` 누락) 수정, nav도
+  `flex-wrap` 처리해 좁은 화면에서 넘치지 않게 함.
+- 다음에 필요한 것: 없음 — 이번 요청 범위는 완료. 사용자가 실제 배포
+  화면에서 다시 확인 예정.
