@@ -10,7 +10,7 @@ export default function Hero() {
           {steps.map((step, i) => (
             <li key={step} className="flex flex-col items-center gap-6 md:flex-row">
               <div className="flex w-32 flex-col items-center gap-3">
-                <span className="font-mono text-xs tracking-widest text-connectx-accent">
+                <span className="font-mono text-xs tracking-widest text-connectx-blue">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="rounded-md border border-connectx-navy/15 bg-white px-4 py-2 text-sm font-semibold text-connectx-navy shadow-sm">
@@ -20,10 +20,8 @@ export default function Hero() {
               {i < steps.length - 1 && (
                 <span
                   aria-hidden
-                  className="relative hidden h-px w-10 shrink-0 bg-slate-300 md:block"
-                >
-                  <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-connectx-accent" />
-                </span>
+                  className="hidden h-px w-10 shrink-0 bg-gradient-to-r from-connectx-blue to-connectx-teal md:block"
+                />
               )}
             </li>
           ))}

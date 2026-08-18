@@ -10,7 +10,7 @@ export default function ConnectAxes({ section }: { section: ConnectAxesContent }
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {section.axes.map((axis) => (
             <div key={axis.label} className="rounded-md border border-slate-200 bg-white p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-connectx-accent">
+              <p className="font-mono text-xs uppercase tracking-widest text-connectx-blue">
                 {axis.label}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">{axis.body}</p>

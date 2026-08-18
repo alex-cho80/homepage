@@ -11,7 +11,7 @@ export default function Hero({ section }: { section: HeroContent }) {
           {section.title}
         </h1>
         {section.positionBadge && (
-          <p className="mt-4 inline-block rounded-full border border-connectx-accent/30 bg-white px-4 py-1.5 font-mono text-xs font-semibold tracking-wide text-connectx-accent">
+          <p className="mt-4 inline-block rounded-full border border-connectx-blue/30 bg-white px-4 py-1.5 font-mono text-xs font-semibold tracking-wide text-connectx-blue">
             {section.positionBadge}
           </p>
         )}
@@ -26,7 +26,7 @@ export default function Hero({ section }: { section: HeroContent }) {
               className={
                 i === 0
                   ? "rounded-md bg-connectx-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-connectx-navy/90"
-                  : "rounded-md border border-connectx-navy/20 px-5 py-2.5 text-sm font-semibold text-connectx-navy transition hover:border-connectx-accent hover:text-connectx-accent"
+                  : "rounded-md border border-connectx-navy/20 px-5 py-2.5 text-sm font-semibold text-connectx-navy transition hover:border-connectx-blue hover:text-connectx-blue"
               }
             >
               {cta.label}

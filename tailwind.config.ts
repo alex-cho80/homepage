@@ -8,8 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "connectx-navy": "#0f172a",
-        "connectx-accent": "#0ea5e9",
+        "connectx-navy": "#0b1d3a",
+        "connectx-blue": "#0052ff",
+        "connectx-teal": "#00c2c2",
       },
     },
   },

@@ -10,7 +10,7 @@ export default function ProcessSteps({ section }: { section: ProcessContent }) {
         <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {section.steps.map((step, i) => (
             <li key={step.label} className="rounded-md border border-connectx-navy/15 bg-slate-50 p-5">
-              <span className="font-mono text-xs tracking-widest text-connectx-accent">
+              <span className="font-mono text-xs tracking-widest text-connectx-blue">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <p className="mt-2 text-sm font-semibold text-connectx-navy">{step.label}</p>

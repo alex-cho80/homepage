@@ -11,7 +11,7 @@ export default function TrustPoints({ section }: { section: TrustContent }) {
           {section.points.map((point) => (
             <li
               key={point}
-              className="rounded-md border-l-2 border-connectx-accent bg-slate-50 p-5 text-sm leading-relaxed text-slate-600"
+              className="rounded-md border-l-2 border-connectx-blue bg-slate-50 p-5 text-sm leading-relaxed text-slate-600"
             >
               {point}
             </li>

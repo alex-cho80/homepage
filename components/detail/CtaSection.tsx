@@ -24,7 +24,7 @@ export default function CtaSection({ section }: { section: CtaContent }) {
             <a
               href={section.secondaryHref}
               {...externalProps(section.secondaryHref)}
-              className="rounded-md border border-connectx-navy/20 px-6 py-3 text-sm font-semibold text-connectx-navy transition hover:border-connectx-accent hover:text-connectx-accent"
+              className="rounded-md border border-connectx-navy/20 px-6 py-3 text-sm font-semibold text-connectx-navy transition hover:border-connectx-blue hover:text-connectx-blue"
             >
               {section.secondaryLabel}
             </a>

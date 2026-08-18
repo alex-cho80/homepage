@@ -16,7 +16,7 @@ export default function AudienceSplit({ section }: { section: AudienceSplitConte
               {column.linkLabel && column.linkHref && (
                 <Link
                   href={column.linkHref}
-                  className="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-connectx-accent hover:underline"
+                  className="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-connectx-blue hover:underline"
                 >
                   {column.linkLabel}
                 </Link>
