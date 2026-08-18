@@ -13,7 +13,10 @@ export const academyContent: DetailPageContent = {
         { label: "커리큘럼 살펴보기", href: "#offerings" },
         { label: "상담 신청하기", href: "#cta" },
       ],
-      illustration: "academy",
+      heroImage: {
+        src: "/images/hero-academy.webp",
+        alt: "서버랙 앞에서 실무자가 동료들에게 인프라 구조를 직접 설명하는 모습",
+      },
     },
     {
       type: "problem",

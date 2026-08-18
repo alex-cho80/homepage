@@ -14,7 +14,10 @@ export const advisoryContent: DetailPageContent = {
         { label: "무료 진단 신청", href: "#cta" },
         { label: "서비스 영역 보기", href: "#offerings" },
       ],
-      illustration: "advisory",
+      heroImage: {
+        src: "/images/hero-advisory.webp",
+        alt: "회의실에서 인프라 아키텍처 다이어그램을 두고 브리핑하는 모습",
+      },
     },
     {
       type: "positionDetail",

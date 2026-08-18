@@ -12,7 +12,10 @@ export const wellnessContent: DetailPageContent = {
         { label: "내 맞춤 추천 받기", href: "#cta" },
         { label: "제품 카테고리 보기", href: "#offerings" },
       ],
-      illustration: "wellness",
+      heroImage: {
+        src: "/images/hero-wellness.webp",
+        alt: "테이블에 놓인 영양제를 두고 맞춤 상담을 받는 두 사람",
+      },
     },
     {
       type: "problem",

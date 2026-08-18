@@ -1,5 +1,4 @@
 import type { HeroContent } from "@/lib/detail-pages/types";
-import HeroIllustration from "@/components/illustrations/HeroIllustration";
 
 export default function Hero({ section }: { section: HeroContent }) {
   return (
@@ -36,9 +35,10 @@ export default function Hero({ section }: { section: HeroContent }) {
             ))}
           </div>
         </div>
-        <HeroIllustration
-          variant={section.illustration}
-          className="mx-auto h-56 w-56 md:h-64 md:w-64"
+        <img
+          src={section.heroImage.src}
+          alt={section.heroImage.alt}
+          className="aspect-[4/3] w-full rounded-md border border-slate-200 object-cover object-right"
         />
       </div>
     </section>

@@ -1,12 +1,9 @@
-import HeroIllustration from "@/components/illustrations/HeroIllustration";
-
 export default function Hero() {
   const steps = ["진단", "큐레이션/설계", "실행", "지속관리"];
   return (
     <section className="border-b border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-        <HeroIllustration variant="landing" className="mx-auto h-24 w-24" />
-        <h1 className="mt-6 text-5xl font-bold tracking-tight text-connectx-navy sm:text-6xl">
+        <h1 className="text-5xl font-bold tracking-tight text-connectx-navy sm:text-6xl">
           ConnectX
         </h1>
         <ol className="mt-14 flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-0">
@@ -29,6 +26,11 @@ export default function Hero() {
             </li>
           ))}
         </ol>
+        <img
+          src="/images/hero-landing.webp"
+          alt="여러 명이 함께 데이터 대시보드를 보며 진단하는 모습"
+          className="mx-auto mt-16 aspect-[21/9] w-full max-w-4xl rounded-md border border-slate-200 object-cover object-[center_75%]"
+        />
       </div>
     </section>
   );
