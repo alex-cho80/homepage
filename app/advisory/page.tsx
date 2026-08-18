@@ -1,7 +1,6 @@
-import ComingSoon from "@/components/ComingSoon";
-import { brandUnits } from "@/lib/brand-units";
+import DetailPage from "@/components/detail/DetailPage";
+import { advisoryContent } from "@/lib/detail-pages/advisory";
 
 export default function AdvisoryPage() {
-  const unit = brandUnits.find((u) => u.slug === "advisory")!;
-  return <ComingSoon unit={unit} />;
+  return <DetailPage content={advisoryContent} />;
 }
