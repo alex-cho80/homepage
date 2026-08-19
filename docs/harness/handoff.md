@@ -111,3 +111,67 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
   `flex-wrap` 처리해 좁은 화면에서 넘치지 않게 함.
 - 다음에 필요한 것: 없음 — 이번 요청 범위는 완료. 사용자가 실제 배포
   화면에서 다시 확인 예정.
+
+## 2026-08-19 — Claude Code (개발/디자인팀장) — Figma 랜딩페이지 리디자인 반영
+
+- 사용자가 Figma에서 직접 디자인한 랜딩페이지 파일(`connectx-landing-redesign`
+  프레임, fileKey `QaU1EUoJTCs6dGoYaH09Mf`)을 Figma MCP(`get_design_context`)로
+  전 구간(nav-bar/hero/process/bento/academy·advisory·wellness-highlight/
+  trust/faq/footer) 가져와 코드로 이식.
+- 다크 테마(bg `#050714`/`#0a0d28` 교차, 카드 `#11142f`, 보더 `#1d234a`,
+  텍스트 `#94a3b8`/`#64748b`, 기존 `connectx-blue`/`connectx-teal`는 Figma
+  값과 정확히 일치해 그대로 재사용)로 전면 교체. `components/landing/*`
+  9개 컴포넌트 신설, `app/page.tsx` 재작성, `Header`/`Footer`도 다크
+  테마로 교체(사이트 전역 적용).
+- 이미지 5장(hero-bg, academy/advisory/wellness 하이라이트, footer-cta-bg)과
+  아이콘 10종(SVG)을 Figma 에셋 URL에서 다운로드해 `public/images/landing/`,
+  `public/icons/landing/`에 커밋(Figma 임시 URL은 7일 후 만료되므로 코드에는
+  로컬 경로만 사용). PNG는 WebP로 변환(장당 1.0~1.2MB → 40~70KB).
+- 폰트: Figma 원본은 헤드라인에 `Wittgenstein`(Google Fonts 미제공, 한글
+  글리프도 없어 실질적으로 원본에서도 자동 폴백됐을 폰트)을 지정하고 있어
+  본문과 동일하게 Manrope(Latin) + Noto Sans KR(한글 폴백) 조합으로 통일.
+  둘 다 `next/font/google`로 로드.
+- `next.config.mjs`의 `output: "export"`(정적 export/GitHub Pages 배포)
+  제약을 확인해 `next/image` 대신 기존 관례대로 순수 `<img>` 태그 사용.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 9페이지 전부
+  생성 성공, dev 서버로 `/`·`/academy`·`/advisory`·`/wellness` 전부 200
+  확인. 브라우저 스크린샷은 이 실행 환경에 헤드리스 브라우저용 시스템
+  라이브러리(`libnspr4` 등)가 없고 sudo 권한도 없어 실행하지 못함 — 사용자가
+  실제 화면에서 육안 확인 필요.
+- 알아둘 것(다음에 필요한 것):
+  1. `/academy`, `/advisory`, `/wellness`는 기존 라이트 테마
+     `components/detail/*` 그대로 — 이제 다크 Header/Footer 사이에 라이트
+     본문이 끼는 구조가 됨. 통일감이 필요하면 상세 페이지도 다크 테마로
+     맞추는 후속 작업 필요(범위 밖이라 이번엔 손대지 않음).
+  2. Footer의 Company 링크(소개/채용/문의하기)는 대응하는 페이지가 없어
+     `href="#"` placeholder로 남김 — 실제 라우트/앵커 결정 필요.
+  3. Header "상담 신청"과 Footer "무료 상담 신청" CTA는 전용 상담 신청
+     페이지가 없어 임시로 `/advisory`로 연결 — 별도 상담 페이지가 생기면
+     교체 필요.
+
+## 2026-08-19 — Claude Code (개발/디자인팀장) — 상세페이지(academy/advisory/wellness) 다크 테마 통일
+
+- 사용자 요청("Figma에서 디자인한 테마로 변경")에 따라 `components/detail/*`
+  10개 섹션 컴포넌트 전부를 랜딩페이지와 동일한 다크 테마 토큰(`bg-cx-bg`/
+  `bg-cx-bg-alt` 교차, `bg-cx-card`, `border-cx-border`, `text-cx-muted`,
+  `connectx-blue`/`connectx-teal` 액센트)으로 재작성. Figma에는 이 상세
+  페이지들의 별도 디자인이 없어(파일에 랜딩 프레임 1개만 존재) 랜딩에서
+  이미 이식한 디자인 시스템을 그대로 확장 적용한 것 — 별도 Figma 조회 없음.
+  - `DetailPage.tsx`에 `Tone`(`"bg" | "bg-alt"`) 타입을 추가하고 섹션
+    배열 인덱스 기준으로 교차 배경을 자동 결정해 각 하위 컴포넌트에 전달
+    (콘텐츠 데이터 구조는 페이지마다 섹션 구성이 달라 타입별 고정 배경
+    대신 인덱스 기반 교차를 선택).
+  - `FaqSection.tsx`는 정적 dt/dd에서 랜딩과 동일한 아코디언(클릭 토글)
+    형태로 업그레이드 — `chevron-down.svg`(랜딩에서 이미 받아온 아이콘)
+    재사용, client 컴포넌트로 전환.
+  - CTA 버튼은 기존처럼 `<a>` 태그(외부 링크 `target=_blank` 처리 유지 —
+    Wellness의 네이버 스마트스토어 링크 등)를 유지하고 시각 스타일만
+    그라디언트 버튼으로 교체(랜딩 `PrimaryButton`과 동일 스타일이지만
+    `Link` 강제 없이 로컬 스타일로 재구현).
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 9페이지 성공,
+  dev 서버로 `/academy`·`/advisory`·`/wellness` 200 확인 + HTML에
+  `bg-cx-bg`/`bg-cx-bg-alt`/`text-white` 클래스 정상 반영 확인.
+- 다음에 필요한 것: 없음 — 요청 범위(다크 테마 통일) 완료. 사용자가
+  실제 화면에서 확인 예정. Footer Company 링크(`#`)와 상담 신청 CTA
+  전용 페이지는 사용자가 "추후 만들 예정"이라고 확인함 — 이번 세션에서는
+  손대지 않음.
