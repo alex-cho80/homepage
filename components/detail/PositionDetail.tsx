@@ -1,5 +1,6 @@
 import type { PositionDetailContent } from "@/lib/detail-pages/types";
 import type { Tone } from "./DetailPage";
+import SectionHeading from "./SectionHeading";
 
 export default function PositionDetail({
   section,
@@ -10,13 +11,11 @@ export default function PositionDetail({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <h2 className="text-center text-2xl font-bold tracking-tight text-white">
-          {section.heading}
-        </h2>
-        <div className="mt-8 space-y-4">
+      <div className="mx-auto max-w-3xl px-6 py-24 sm:py-28">
+        <SectionHeading>{section.heading}</SectionHeading>
+        <div className="mt-10 space-y-5">
           {section.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="text-sm leading-relaxed text-cx-muted">
+            <p key={paragraph} className="text-[17px] leading-[1.6] text-cx-muted">
               {paragraph}
             </p>
           ))}

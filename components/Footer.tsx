@@ -30,12 +30,7 @@ export default function Footer() {
       <div className="border-t border-cx-border px-6 pb-10 pt-16 sm:px-[120px] sm:pt-20">
         <div className="mx-auto flex max-w-[1200px] flex-col items-start justify-between gap-12 sm:flex-row">
           <div className="flex max-w-[320px] flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-connectx-blue text-sm font-extrabold text-white">
-                X
-              </span>
-              <span className="text-lg font-extrabold text-white">ConnectX</span>
-            </div>
+            <img src="/logo-dark.png" alt="ConnectX" className="h-7 w-auto object-contain" />
             <p className="text-[13px] leading-relaxed text-cx-muted">
               IT 아카데미, 테크 자문 서비스, 그리고 의과학 기반 건강 관리를 하나의 체인으로 매끄럽게 연결합니다.
             </p>
@@ -68,10 +63,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-[1200px] flex-col items-start justify-between gap-3 text-xs text-cx-dim sm:flex-row sm:items-center">
-          <div className="flex flex-col gap-2">
-            <p>대표자: 김커넥트 | 서울시 강남구 테헤란로 123 ConnectX 타워</p>
-            <p>© {new Date().getFullYear()} ConnectX. All rights reserved.</p>
-          </div>
+          <p>© {new Date().getFullYear()} ConnectX. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="transition hover:text-white">
               이용약관
