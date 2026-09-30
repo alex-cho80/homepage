@@ -1,4 +1,5 @@
 import type { DetailPageContent } from "./types";
+import { academyConsultMailto } from "@/lib/mailto";
 
 export const academyContent: DetailPageContent = {
   sections: [
@@ -10,8 +11,8 @@ export const academyContent: DetailPageContent = {
       subtitle:
         "지식ㆍ실무ㆍ사람을 연결해, 자격증이 아니라 실전에서 통하는 인프라/보안 역량을 만듭니다.",
       ctas: [
+        { label: "상담 신청하기", href: academyConsultMailto },
         { label: "커리큘럼 살펴보기", href: "#offerings" },
-        { label: "상담 신청하기", href: "#cta" },
       ],
       heroImage: {
         src: "/images/hero-academy.webp",
@@ -134,9 +135,7 @@ export const academyContent: DetailPageContent = {
       heading: "지금 상담을 신청하세요",
       body: "어떤 과정이 나에게 맞는지, 우리 조직에 필요한 교육은 무엇인지 먼저 진단해드립니다.",
       primaryLabel: "무료 상담 신청",
-      primaryHref: "#",
-      secondaryLabel: "커리큘럼 자료 요청",
-      secondaryHref: "#",
+      primaryHref: academyConsultMailto,
     },
   ],
 };

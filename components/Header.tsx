@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { brandUnits } from "@/lib/brand-units";
+import { generalInquiryMailto } from "@/lib/mailto";
 
 export default function Header() {
   return (
@@ -19,12 +20,12 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/advisory"
+        <a
+          href={generalInquiryMailto}
           className="shrink-0 rounded-md bg-connectx-blue px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90"
         >
           상담 신청
-        </Link>
+        </a>
       </div>
     </header>
   );

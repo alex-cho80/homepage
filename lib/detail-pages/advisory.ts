@@ -1,4 +1,5 @@
 import type { DetailPageContent } from "./types";
+import { advisoryDiagnosisMailto } from "@/lib/mailto";
 
 export const advisoryContent: DetailPageContent = {
   sections: [
@@ -11,7 +12,7 @@ export const advisoryContent: DetailPageContent = {
       subtitle:
         "기업 문제ㆍ기술ㆍ솔루션을 연결해, 전담 인프라·보안 책임자 없이도 안전하게 성장할 수 있게 합니다.",
       ctas: [
-        { label: "무료 진단 신청", href: "#cta" },
+        { label: "무료 진단 신청", href: advisoryDiagnosisMailto },
         { label: "서비스 영역 보기", href: "#offerings" },
       ],
       heroImage: {
@@ -127,9 +128,7 @@ export const advisoryContent: DetailPageContent = {
       heading: "지금 무료로 진단받아보세요",
       body: "전담 책임자가 없어도 괜찮습니다. 지금 상태를 먼저 함께 점검해드립니다.",
       primaryLabel: "무료 진단 신청",
-      primaryHref: "#",
-      secondaryLabel: "담당자와 상담 예약",
-      secondaryHref: "#",
+      primaryHref: advisoryDiagnosisMailto,
     },
   ],
 };

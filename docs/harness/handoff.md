@@ -175,3 +175,49 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
   실제 화면에서 확인 예정. Footer Company 링크(`#`)와 상담 신청 CTA
   전용 페이지는 사용자가 "추후 만들 예정"이라고 확인함 — 이번 세션에서는
   손대지 않음.
+
+## 2026-09-29 — marketing-lead (마케팅/홍보팀장)
+
+- 사용자 피드백("상담신청/무료 진단 신청 CTA가 너무 많다")에 따라 전 페이지
+  CTA 인벤토리를 정리. 산출물: `docs/harness/marketing/cta-cleanup.md`.
+- 결정: 페이지당 "신청" CTA는 전역 Header/Footer + 페이지 Hero + 하단
+  마무리 1개, 총 4개(그중 Hero/하단 2개는 같은 액션의 반복 노출)로 통일.
+  서로 다른 문구로 액션을 쪼개던 2차 버튼 3개 제거 대상으로 지정: Academy
+  하단 secondary("커리큘럼 자료 요청"), Advisory 하단 secondary("담당자와
+  상담 예약"), Wellness 하단 secondary("뉴스레터/소식 구독" — 실제 구독
+  인프라 없이 "#"로 방치되어 있던 미기능 CTA).
+- 유지하기로 한 각 CTA(전역/랜딩/Academy/Advisory/Wellness)별로 mailto
+  subject·body 초안 작성 완료 — 수신 fortunecho@naver.com, 톤앤매너는
+  기존 결정사항(전문적/신뢰감) 준수.
+- 참고: 이번 세션에서는 프로젝트 전용 marketing-lead 서브에이전트 호출이
+  하니스 제약으로 실패(커스텀 agent type 미등록 + API 연결 에러)해
+  Claude Code(개발팀장)가 이 역할을 겸해 기획 문서를 직접 작성함.
+- 다음에 필요한 것: 개발팀장이 위 문서의 "개발팀장에게 인계" 섹션을 입력으로
+  받아 mailto 링크 구현 및 CTA 3개 제거 진행.
+
+## 2026-09-29 — Claude Code (개발/디자인팀장) — CTA mailto 전환 완료
+
+- `docs/harness/marketing/cta-cleanup.md` 기획안대로 구현:
+  - `lib/mailto.ts` 신설 — 수신 주소(fortunecho@naver.com)와 페이지별
+    mailto 링크(subject+body 인코딩) 5종을 공용 상수로 정의. 클릭 시
+    사용자 기본 이메일 클라이언트(Gmail/Outlook 등)가 뜨는 방식.
+  - Header/Footer의 "상담 신청"/"무료 상담 신청"을 임시 `/advisory` 링크
+    대신 공용 mailto로 교체.
+  - 랜딩 Hero "무료 진단 신청"을 mailto로 교체.
+  - Academy/Advisory/Wellness Hero의 신청 CTA를 `#cta` 앵커 대신 mailto로
+    직접 연결(스크롤 후 재클릭하는 2단계 흐름 제거). Academy는 기존
+    CTA 배열 순서가 다른 두 페이지와 달리 신청 버튼이 2번째(보조 스타일)
+    였던 것을 발견해 순서를 맞춰 신청 버튼을 1차(그라디언트) 버튼으로
+    통일.
+  - 하단 CtaSection의 미연결("#") 2차 버튼 3개(Academy "커리큘럼 자료
+    요청", Advisory "담당자와 상담 예약", Wellness "뉴스레터/소식 구독")
+    제거 — `secondaryLabel`/`secondaryHref`가 이미 optional 타입이라
+    타입 변경 없이 데이터만 삭제.
+  - Wellness 하단 primary("스마트스토어에서 구매하기")는 실제 외부
+    구매 링크라 그대로 유지.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 9페이지 전부
+  성공, `out/` 산출물에서 각 페이지 mailto 링크가 올바른 subject/body로
+  인코딩된 것 직접 확인.
+- 다음에 필요한 것: 없음 — 요청 범위(CTA 정리 + mailto 연결) 완료. 실제
+  메일 클라이언트 동작은 사용자가 브라우저에서 클릭해 직접 확인 필요
+  (이 실행 환경은 헤드리스 브라우저 실행 불가).

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { brandUnits } from "@/lib/brand-units";
+import { generalInquiryMailto } from "@/lib/mailto";
 
 export default function Footer() {
   return (
@@ -18,13 +19,13 @@ export default function Footer() {
         <p className="relative max-w-[480px] text-base text-cx-muted">
           더 안전하게 성장하고, 더 영리하게 대처하며, 완전히 보살핌 받는 비즈니스 환경을 설계합니다.
         </p>
-        <Link
-          href="/advisory"
+        <a
+          href={generalInquiryMailto}
           className="relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
         >
           무료 상담 신청
           <span aria-hidden>→</span>
-        </Link>
+        </a>
       </div>
 
       <div className="border-t border-cx-border px-6 pb-10 pt-16 sm:px-[120px] sm:pt-20">

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import SectionBadge from "./SectionBadge";
+import { landingDiagnosisMailto } from "@/lib/mailto";
 
 const meshNodes = [
   { label: "Academy", icon: "/icons/landing/book-open.svg", href: "/academy" },
@@ -35,13 +35,13 @@ export default function HeroSection() {
           기업과 개인의 지속 가능한 성장을 설계합니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Link
-            href="/advisory"
+          <a
+            href={landingDiagnosisMailto}
             className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
           >
             무료 진단 신청
             <img src="/icons/landing/arrow-right.svg" alt="" aria-hidden className="size-3.5" />
-          </Link>
+          </a>
           <a
             href="#verticals"
             className="rounded-lg border border-cx-border bg-cx-bg px-7 py-3.5 text-base font-semibold text-cx-muted transition hover:text-white"

@@ -27,7 +27,7 @@ export default function Home() {
         title="당신의 외부 기술기획실"
         description="중소기업이나 스타트업에게 최고 수준의 CTO, CISO를 풀타임으로 고용하는 것은 불가능에 가깝습니다. ConnectX가 인프라 아키텍처 수립과 보안 거버넌스 규정 대응을 합리적 리테이너 파트너십을 통해 밀착 대행합니다."
         chips={["인프라+보안 통합 진단", "기업 규모 맞춤 제안", "상시 자문 리테이너"]}
-        ctaLabel="무료 진단 신청"
+        ctaLabel="Advisory 자세히 보기"
         ctaHref="/advisory"
         image="/images/landing/advisory.webp"
         imageAlt="인프라 아키텍처를 브리핑하는 모습"

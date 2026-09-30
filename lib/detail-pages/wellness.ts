@@ -1,4 +1,5 @@
 import type { DetailPageContent } from "./types";
+import { wellnessRecommendationMailto } from "@/lib/mailto";
 
 export const wellnessContent: DetailPageContent = {
   sections: [
@@ -9,7 +10,7 @@ export const wellnessContent: DetailPageContent = {
       title: "ConnectX Wellness",
       subtitle: "건강ㆍ전문가ㆍ데이터를 연결해, 나에게 맞는 영양제를 정확하게 찾아드립니다.",
       ctas: [
-        { label: "내 맞춤 추천 받기", href: "#cta" },
+        { label: "내 맞춤 추천 받기", href: wellnessRecommendationMailto },
         { label: "제품 카테고리 보기", href: "#offerings" },
       ],
       heroImage: {
@@ -120,8 +121,6 @@ export const wellnessContent: DetailPageContent = {
       body: "1분 체크리스트로 시작합니다. 나에게, 혹은 부모님께 필요한 것부터 안내해드립니다.",
       primaryLabel: "스마트스토어에서 구매하기",
       primaryHref: "https://smartstore.naver.com/connectx",
-      secondaryLabel: "뉴스레터/소식 구독",
-      secondaryHref: "#",
     },
   ],
 };
