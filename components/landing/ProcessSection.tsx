@@ -4,13 +4,13 @@ const steps = [
   {
     number: "01",
     title: "진단",
-    description: "인프라 보안 상태부터 개인의 유전적·환경적 건강 데이터까지 철저하게 분석합니다.",
+    description: "인프라 보안 상태부터 개인의 생활습관과 건강 상태까지 꼼꼼하게 확인합니다.",
     hasArrow: true,
   },
   {
     number: "02",
     title: "큐레이션/설계",
-    description: "검증된 최적의 IT 아키텍처 및 맞춤형 건강 처방 패키지를 상세히 기획합니다.",
+    description: "현황에 맞는 IT 아키텍처와 맞춤형 건강기능식품 구성을 상세히 기획합니다.",
     hasArrow: true,
   },
   {
@@ -33,9 +33,9 @@ export default function ProcessSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>METHODOLOGY</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">우리의 방법론</h2>
+          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">이렇게 함께합니다</h2>
           <p className="max-w-[520px] text-base text-cx-muted">
-            문제를 명확히 짚어내고 솔루션을 설계하여 실현한 뒤, 지치지 않고 지속될 수 있도록
+            문제를 명확히 짚어내고 솔루션을 설계하여 실현한 뒤, 개선 효과가 지속되도록
             전 여정을 함께합니다.
           </p>
         </div>

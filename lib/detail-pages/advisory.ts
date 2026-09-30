@@ -6,14 +6,14 @@ export const advisoryContent: DetailPageContent = {
     {
       type: "hero",
       id: "hero",
-      label: "인프라/보안 컨설팅",
+      label: "IT 인프라·보안 자문",
       title: "ConnectX Advisory",
-      positionBadge: "SMB Infra & Security Transformation Partner",
+      positionBadge: "중소기업을 위한 IT 인프라·보안 파트너",
       subtitle:
         "기업 문제ㆍ기술ㆍ솔루션을 연결해, 전담 인프라·보안 책임자 없이도 안전하게 성장할 수 있게 합니다.",
       ctas: [
-        { label: "무료 진단 신청", href: advisoryDiagnosisMailto },
-        { label: "서비스 영역 보기", href: "#offerings" },
+        { label: "무료 진단 신청", href: advisoryDiagnosisMailto, variant: "primary" },
+        { label: "서비스 영역 보기", href: "#offerings", variant: "secondary" },
       ],
       heroImage: {
         src: "/images/hero-advisory.webp",
@@ -23,7 +23,7 @@ export const advisoryContent: DetailPageContent = {
     {
       type: "positionDetail",
       id: "position",
-      heading: "왜 '외부 기술기획실'인가",
+      heading: "왜 IT 인프라·보안 자문인가",
       paragraphs: [
         "많은 중소기업은 인프라와 보안을 각각 채용하거나, 아예 겸임으로 떠안습니다. 그 결과 문제가 생기기 전까지는 아무도 전체 그림을 보지 못합니다.",
         "Advisory는 그 자리를 대신 채웁니다. 전담 인프라·보안 책임자를 채용하기 어려운 기업을 위한 외부 전문팀으로, 인프라와 보안을 따로 보지 않고 외부 기술기획실처럼 함께 봅니다.",
@@ -81,12 +81,27 @@ export const advisoryContent: DetailPageContent = {
       id: "offerings",
       heading: "무엇을 함께 보나요",
       items: [
-        { title: "인프라 아키텍처 진단/설계", body: "현재 인프라 구조를 진단하고 개선 아키텍처를 설계합니다." },
-        { title: "보안 체계 수립", body: "정책과 프로세스 관점에서 기업 규모에 맞는 보안 체계를 수립합니다." },
-        { title: "컴플라이언스 대응 지원", body: "관련 규정/인증 대응에 필요한 준비를 지원합니다." },
+        {
+          title: "인프라 아키텍처 진단/설계",
+          body: "현재 인프라 구조를 진단하고, 현황 분석과 개선 구성도(안)를 정리해드립니다.",
+        },
+        {
+          title: "보안 체계 수립",
+          body: "정책과 프로세스 관점에서 기업 규모에 맞는 보안 체계를 수립하고, 정책·점검표·역할과 책임을 문서로 정리합니다.",
+        },
+        {
+          title: "컴플라이언스 대응 지원",
+          body: "관련 규정/인증 대응에 필요한 준비를 지원합니다. 지원 가능한 범위는 상담 시 확인해드립니다.",
+        },
         { title: "클라우드 전환 자문", body: "클라우드 전환 시점과 방식에 대한 자문을 제공합니다." },
-        { title: "솔루션/벤더 선정 자문", body: "기업 규모와 예산에 맞는 솔루션ㆍ벤더 선정을 돕습니다." },
-        { title: "상시 자문 (리테이너)", body: "일회성이 아닌 지속적인 자문 관계로 함께합니다." },
+        {
+          title: "솔루션/벤더 선정 자문",
+          body: "요구사항 정의, 후보 비교표, 평가 기준을 함께 정리해 기업 규모와 예산에 맞는 솔루션ㆍ벤더 선정을 돕습니다.",
+        },
+        {
+          title: "정기 자문 (리테이너)",
+          body: "일회성이 아닌 월 정기 미팅과 상시 문의 채널을 포함한 지속적인 자문 관계로 함께하며, 구체적인 횟수와 범위는 계약 시 정합니다.",
+        },
       ],
       note: "위 서비스 구성은 예시이며, 실제 상품/패키지는 진단 결과에 따라 상담을 통해 안내드립니다.",
     },
@@ -114,7 +129,7 @@ export const advisoryContent: DetailPageContent = {
         {
           question: "일회성 컨설팅인가요, 지속적인 관리인가요?",
           answer:
-            "진단과 설계 이후에도 리테이너 형태의 지속 관리를 제공합니다. 필요에 따라 일회성 진단만 받으실 수도 있습니다.",
+            "진단과 설계 이후에도 월 정기 자문(리테이너) 형태의 지속 관리를 제공합니다. 필요에 따라 일회성 진단만 받으실 수도 있습니다.",
         },
         {
           question: "인프라와 보안을 각각 따로 의뢰할 수도 있나요?",

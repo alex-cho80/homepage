@@ -6,9 +6,9 @@ const verticals = [
     slug: "academy",
     icon: "/icons/landing/graduation-cap.svg",
     name: "ConnectX Academy",
-    tagline: "지식·실무·사람 연결",
+    tagline: "현업에 적용하는 IT 실무교육",
     description:
-      "자격증 취득 목적이 아닌, 복잡한 인프라와 클라우드 보안 실전에서 즉시 통하는 진짜 능력을 교육합니다.",
+      "기초 개념부터 실제 운영·장애 대응까지, 복잡한 인프라와 클라우드 보안을 실습으로 익히는 교육입니다.",
     tag: "실무 교육 프로그램",
     accent: "blue",
     highlighted: false,
@@ -17,10 +17,10 @@ const verticals = [
     slug: "advisory",
     icon: "/icons/landing/shield.svg",
     name: "ConnectX Advisory",
-    tagline: "기업 문제·기술·솔루션 연결",
+    tagline: "기업을 위한 IT 인프라·보안 자문",
     description:
-      "전담 보안/인프라 책임자가 없이도 초기 스타트업 및 중소기업이 안전하고 탄탄하게 성장할 수 있도록 돕습니다.",
-    tag: "인프라 및 보안 통합 컨설팅",
+      "전담 인프라·보안 책임자가 없어도 초기 스타트업 및 중소기업이 안전하고 탄탄하게 성장할 수 있도록 돕습니다.",
+    tag: "IT 인프라·보안 자문",
     accent: "blue",
     highlighted: true,
   },
@@ -28,10 +28,10 @@ const verticals = [
     slug: "wellness",
     icon: "/icons/landing/heart.svg",
     name: "ConnectX Wellness",
-    tagline: "건강·전문가·데이터 연결",
+    tagline: "선택 기준을 안내하는 건강기능식품",
     description:
-      "무분별한 바이럴 광고를 넘어, 개인별 고유 바이오 데이터와 전문가 분석을 통해 진짜 맞춤형 기능식품을 제안합니다.",
-    tag: "데이터 기반 큐레이션",
+      "홍보성 정보에 기대지 않고, 표시 성분과 제품 정보를 비교해 나에게 맞는 건강기능식품을 선택할 수 있도록 돕습니다.",
+    tag: "건강기능식품 셀렉션",
     accent: "teal",
     highlighted: false,
   },
@@ -43,7 +43,7 @@ export default function BentoSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>VERTICALS</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">세 가지 연결</h2>
+          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">필요한 서비스를 선택하세요</h2>
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
           {verticals.map((v) => (

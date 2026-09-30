@@ -3,6 +3,7 @@ import { landingDiagnosisMailto } from "@/lib/mailto";
 
 const meshNodes = [
   { label: "Academy", icon: "/icons/landing/book-open.svg", href: "/academy" },
+  { label: "Advisory", icon: "/icons/landing/shield.svg", href: "/advisory" },
   { label: "Wellness", icon: "/icons/landing/activity.svg", href: "/wellness" },
 ] as const;
 
@@ -31,51 +32,40 @@ export default function HeroSection() {
           <span className="text-connectx-teal"> 변화</span>
         </h1>
         <p className="max-w-[640px] text-lg leading-relaxed text-cx-muted sm:text-xl">
-          진단에서 지속관리까지, ConnectX가 IT 인프라 · 보안 · 건강을 하나로 연결하여
-          기업과 개인의 지속 가능한 성장을 설계합니다.
+          IT 실무교육ㆍ인프라 및 보안 자문ㆍ건강기능식품 선택을 돕는 ConnectX입니다.
+          필요한 서비스를 진단부터 지속관리까지 함께합니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
-            href={landingDiagnosisMailto}
+            href="#verticals"
             className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
           >
-            무료 진단 신청
+            서비스 둘러보기
             <img src="/icons/landing/arrow-right.svg" alt="" aria-hidden className="size-3.5" />
           </a>
           <a
-            href="#verticals"
+            href={landingDiagnosisMailto}
             className="rounded-lg border border-cx-border bg-cx-bg px-7 py-3.5 text-base font-semibold text-cx-muted transition hover:text-white"
           >
-            서비스 둘러보기
+            무료 진단 신청
           </a>
         </div>
       </div>
 
-      <div className="relative mt-24 hidden w-full max-w-[1200px] items-center sm:flex">
-        <div className="flex flex-1 items-center gap-10">
-          <div className="flex flex-1 flex-col items-center gap-3">
-            <div className="flex size-12 items-center justify-center rounded-2xl border border-connectx-blue bg-connectx-blue/[0.13]">
-              <img src={meshNodes[0].icon} alt="" aria-hidden className="size-[22px]" />
-            </div>
-            <span className="text-sm font-bold text-white">{meshNodes[0].label}</span>
-          </div>
-          <img src="/icons/landing/mesh-line.svg" alt="" aria-hidden className="h-px w-40 shrink-0" />
-          <div className="flex flex-1 flex-col items-center gap-3">
-            <div className="flex size-16 items-center justify-center rounded-full border-2 border-connectx-teal bg-connectx-teal/20 blur-[0.5px]">
-              <div className="flex size-8 items-center justify-center rounded-2xl bg-connectx-teal text-base font-extrabold text-cx-bg">
-                C
+      <div className="relative mt-24 hidden w-full max-w-[1200px] items-center justify-center sm:flex">
+        {meshNodes.map((node, i) => (
+          <div className="flex items-center" key={node.label}>
+            {i > 0 && (
+              <img src="/icons/landing/mesh-line.svg" alt="" aria-hidden className="h-px w-24 shrink-0 sm:w-40" />
+            )}
+            <a href={node.href} className="flex flex-col items-center gap-3 px-4 transition hover:opacity-80">
+              <div className="flex size-12 items-center justify-center rounded-2xl border border-connectx-teal bg-connectx-teal/[0.13]">
+                <img src={node.icon} alt="" aria-hidden className="size-[22px]" />
               </div>
-            </div>
-            <span className="text-sm font-extrabold text-connectx-teal">ConnectX Platform</span>
+              <span className="text-sm font-bold text-white">{node.label}</span>
+            </a>
           </div>
-          <img src="/icons/landing/mesh-line.svg" alt="" aria-hidden className="h-px w-40 shrink-0" />
-          <div className="flex flex-1 flex-col items-center gap-3">
-            <div className="flex size-12 items-center justify-center rounded-2xl border border-connectx-teal bg-connectx-teal/[0.13]">
-              <img src={meshNodes[1].icon} alt="" aria-hidden className="size-[22px]" />
-            </div>
-            <span className="text-sm font-bold text-white">{meshNodes[1].label}</span>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

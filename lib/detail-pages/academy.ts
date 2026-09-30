@@ -1,5 +1,5 @@
 import type { DetailPageContent } from "./types";
-import { academyConsultMailto } from "@/lib/mailto";
+import { academyConsultMailto, academyIndividualMailto, academyCorporateMailto } from "@/lib/mailto";
 
 export const academyContent: DetailPageContent = {
   sections: [
@@ -9,10 +9,10 @@ export const academyContent: DetailPageContent = {
       label: "인프라/보안 교육",
       title: "ConnectX Academy",
       subtitle:
-        "지식ㆍ실무ㆍ사람을 연결해, 자격증이 아니라 실전에서 통하는 인프라/보안 역량을 만듭니다.",
+        "지식ㆍ실무ㆍ사람을 연결해, 기초 개념부터 실제 운영·장애 대응까지 실습으로 배우는 인프라/보안 역량을 만듭니다.",
       ctas: [
-        { label: "상담 신청하기", href: academyConsultMailto },
-        { label: "커리큘럼 살펴보기", href: "#offerings" },
+        { label: "상담 신청하기", href: academyConsultMailto, variant: "primary" },
+        { label: "커리큘럼 살펴보기", href: "#offerings", variant: "secondary" },
       ],
       heroImage: {
         src: "/images/hero-academy.webp",
@@ -86,12 +86,14 @@ export const academyContent: DetailPageContent = {
         {
           title: "개인 수강생",
           body: "인프라/보안 분야로 취업·이직을 준비 중이거나, 현재 업무 역량을 실무 수준으로 끌어올리고 싶은 분.",
+          linkLabel: "개인 교육 문의",
+          linkHref: academyIndividualMailto,
         },
         {
           title: "기업 교육 담당자",
           body: "신입/재직자 인프라·보안 교육을 위탁하고 싶은 기업, 팀 단위 역량강화가 필요한 조직.",
-          linkLabel: "Advisory 살펴보기",
-          linkHref: "/advisory",
+          linkLabel: "기업 맞춤교육 문의",
+          linkHref: academyCorporateMailto,
         },
       ],
     },

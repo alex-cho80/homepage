@@ -4,17 +4,17 @@ const points = [
   {
     icon: "/icons/landing/user-check.svg",
     title: "현직 실무자가 직접 설계",
-    description: "시장의 죽은 이론이 아닙니다. 국내 최대 규모 테크 기업의 시니어 엔지니어링 리더들이 직접 수립하고 실행합니다.",
+    description: "실제 운영 환경에서 활용하는 지식입니다. 현업 경험을 가진 시니어 엔지니어들이 직접 설계하고 실행합니다.",
   },
   {
     icon: "/icons/landing/shield.svg",
     title: "인프라와 보안을 함께 보는 팀",
-    description: "인프라 없는 보안도, 보안 없는 인프라도 무의미합니다. 하나의 관점으로 결합하여 리스크를 원천 제거합니다.",
+    description: "인프라 없는 보안도, 보안 없는 인프라도 무의미합니다. 하나의 관점으로 결합해 주요 위험을 파악하고 줄입니다.",
   },
   {
     icon: "/icons/landing/refresh-cw.svg",
     title: "1회성이 아닌 지속 관리",
-    description: "처방과 설계 단계에서 멈추지 않고, 정기 리포트와 상시 자문 서비스를 제공해 변화를 끝까지 유지합니다.",
+    description: "설계 단계에서 멈추지 않고, 정기 리포트와 지속적인 자문을 제공해 변화를 끝까지 유지합니다.",
   },
 ];
 

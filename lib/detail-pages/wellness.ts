@@ -1,17 +1,17 @@
 import type { DetailPageContent } from "./types";
-import { wellnessRecommendationMailto } from "@/lib/mailto";
+import { wellnessRecommendationMailto, wellnessProductInquiryMailto } from "@/lib/mailto";
 
 export const wellnessContent: DetailPageContent = {
   sections: [
     {
       type: "hero",
       id: "hero",
-      label: "건강기능식품 위탁판매",
+      label: "건강기능식품 셀렉션",
       title: "ConnectX Wellness",
-      subtitle: "건강ㆍ전문가ㆍ데이터를 연결해, 나에게 맞는 영양제를 정확하게 찾아드립니다.",
+      subtitle: "건강ㆍ전문가ㆍ데이터를 연결해, 제품 정보를 비교하고 선택할 수 있도록 돕습니다.",
       ctas: [
-        { label: "내 맞춤 추천 받기", href: wellnessRecommendationMailto },
-        { label: "제품 카테고리 보기", href: "#offerings" },
+        { label: "내 맞춤 추천 받기", href: wellnessRecommendationMailto, variant: "primary" },
+        { label: "제품 카테고리 보기", href: "#offerings", variant: "secondary" },
       ],
       heroImage: {
         src: "/images/hero-wellness.webp",
@@ -21,7 +21,7 @@ export const wellnessContent: DetailPageContent = {
     {
       type: "problem",
       id: "problem",
-      heading: "영양제, 아무거나 드시고 계신가요",
+      heading: "영양제, 어떤 기준으로 선택하시나요?",
       items: [
         "광고에서 본 제품과 내 몸에 필요한 제품은 다를 수 있습니다.",
         "부모님 영양제를 사드리고 싶은데, 무엇부터 챙겨야 할지 모르겠습니다.",
@@ -37,7 +37,7 @@ export const wellnessContent: DetailPageContent = {
           label: "건강 연결",
           body: "지금의 몸 상태와 생활 습관에서 출발합니다. 유행하는 성분이 아니라 내게 필요한 것부터.",
         },
-        { label: "전문가 연결", body: "전문가가 검수한 제품과 정보만 안내합니다. 광고가 아니라 근거." },
+        { label: "전문가 연결", body: "검증 가능한 제품 정보와 표시 성분을 기준으로 안내합니다. 광고가 아니라 근거." },
         {
           label: "데이터 연결",
           body: "한 번의 추천으로 끝나지 않습니다. 기록을 바탕으로 계속 맞춰가며 필요할 때 다시 챙깁니다.",
@@ -88,7 +88,7 @@ export const wellnessContent: DetailPageContent = {
       type: "trust",
       id: "trust",
       heading: "믿고 선택하는 이유",
-      points: ["전문가가 검수한 제품만 소개합니다", "광고비가 아니라 필요에 따라 추천합니다", "먹는 것을 계속 기록하고 관리합니다"],
+      points: ["브랜드·표시정보·구매조건을 기준으로 선별한 제품을 소개합니다", "광고비가 아니라 필요에 따라 추천합니다", "먹는 것을 계속 기록하고 관리합니다"],
     },
     {
       type: "faq",
@@ -98,7 +98,7 @@ export const wellnessContent: DetailPageContent = {
         {
           question: "직접 제조하는 제품인가요?",
           answer:
-            "ConnectX Wellness는 직접 제조하지 않고, 전문가가 검수한 여러 제품 중 나에게 맞는 것을 골라드리는 위탁판매 방식으로 운영됩니다.",
+            "ConnectX Wellness는 직접 제조하지 않고, 공개된 제품 정보와 표시 성분을 기준으로 비교한 여러 제품 중 나에게 맞는 것을 골라드리는 위탁판매 방식으로 운영됩니다.",
         },
         {
           question: "부모님 것도 대신 신청할 수 있나요?",
@@ -117,10 +117,12 @@ export const wellnessContent: DetailPageContent = {
     {
       type: "cta",
       id: "cta",
-      heading: "지금 내 맞춤 추천을 받아보세요",
-      body: "1분 체크리스트로 시작합니다. 나에게, 혹은 부모님께 필요한 것부터 안내해드립니다.",
-      primaryLabel: "스마트스토어에서 구매하기",
+      heading: "나와 가족을 위한 건강기능식품, 선택 기준부터 꼼꼼하게",
+      body: "브랜드, 제품 정보, 구매 조건을 확인하고 비교해 보세요. 더 궁금한 점은 언제든 문의해 주세요.",
+      primaryLabel: "스마트스토어에서 제품 보기",
       primaryHref: "https://smartstore.naver.com/connectx",
+      secondaryLabel: "제품 문의하기",
+      secondaryHref: wellnessProductInquiryMailto,
     },
   ],
 };

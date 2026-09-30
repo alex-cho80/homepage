@@ -1,4 +1,5 @@
 import type { HeroContent } from "@/lib/detail-pages/types";
+import { primaryCtaClass, secondaryCtaClass } from "./ctaButtonStyles";
 
 function externalProps(href: string) {
   return href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {};
@@ -24,16 +25,12 @@ export default function Hero({ section }: { section: HeroContent }) {
             {section.subtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-            {section.ctas.map((cta, i) => (
+            {section.ctas.map((cta) => (
               <a
                 key={cta.label}
                 href={cta.href}
                 {...externalProps(cta.href)}
-                className={
-                  i === 0
-                    ? "inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
-                    : "rounded-full border border-white/[0.12] px-7 py-3.5 text-[15px] font-medium text-cx-muted transition hover:border-white/25 hover:text-white"
-                }
+                className={cta.variant === "primary" ? primaryCtaClass : secondaryCtaClass}
               >
                 {cta.label}
               </a>

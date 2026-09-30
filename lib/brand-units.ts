@@ -18,10 +18,10 @@ export const brandUnits: BrandUnit[] = [
   },
   {
     slug: "advisory",
-    domain: "인프라/보안 컨설팅",
+    domain: "IT 인프라·보안 자문",
     name: "ConnectX Advisory",
     connectPhrase: "기업 문제ㆍ기술ㆍ솔루션 연결",
-    description: "인프라/보안 컨설팅",
+    description: "IT 인프라·보안 자문",
     position: "SMB Infra & Security Transformation Partner",
     positionDetails: [
       "전담 인프라·보안 책임자를 채용하기 어려운 기업의 외부 전문팀",
@@ -30,9 +30,9 @@ export const brandUnits: BrandUnit[] = [
   },
   {
     slug: "wellness",
-    domain: "건강기능식품 위탁판매",
+    domain: "건강기능식품 셀렉션",
     name: "ConnectX Wellness",
     connectPhrase: "건강ㆍ전문가ㆍ데이터 연결",
-    description: "건강기능식품 위탁판매",
+    description: "건강기능식품 셀렉션",
   },
 ];

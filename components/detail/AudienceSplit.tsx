@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { AudienceSplitContent } from "@/lib/detail-pages/types";
 import type { Tone } from "./DetailPage";
 import SectionHeading from "./SectionHeading";
@@ -20,12 +19,12 @@ export default function AudienceSplit({
               <p className="text-[15px] font-semibold text-white">{column.title}</p>
               <p className="mt-3 text-[15px] leading-[1.6] text-cx-muted">{column.body}</p>
               {column.linkLabel && column.linkHref && (
-                <Link
+                <a
                   href={column.linkHref}
                   className="mt-5 inline-block text-[13px] font-semibold uppercase tracking-[0.06em] text-connectx-teal hover:opacity-80"
                 >
                   {column.linkLabel}
-                </Link>
+                </a>
               )}
             </div>
           ))}

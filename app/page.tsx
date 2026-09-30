@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/landing/HeroSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import BentoSection from "@/components/landing/BentoSection";
@@ -5,17 +6,22 @@ import VerticalHighlight from "@/components/landing/VerticalHighlight";
 import TrustSection from "@/components/landing/TrustSection";
 import FaqSection from "@/components/landing/FaqSection";
 
+export const metadata: Metadata = {
+  title: "ConnectX | IT 실무교육 · 인프라 및 보안 자문 · 건강기능식품",
+  description:
+    "IT 실무교육(Academy), IT 인프라·보안 자문(Advisory), 건강기능식품 셀렉션(Wellness)을 제공하는 ConnectX입니다.",
+};
+
 export default function Home() {
   return (
     <main className="bg-cx-bg">
       <HeroSection />
-      <ProcessSection />
       <BentoSection />
       <VerticalHighlight
         badge="CONNECTX ACADEMY"
         title="실무에서 통하는 인프라/보안 역량"
-        description="대규모 트래픽 설계와 침해 사고 대응은 책에서 배울 수 없습니다. ConnectX 아카데미는 글로벌 수준의 실천 인프라 구축 및 가상 침해 실습 시나리오를 바탕으로 현업 탑클래스 리더들이 직접 설계하고 밀착 교육합니다."
-        chips={["현직 실무자 강의", "실습 중심 커리큘럼", "수료 후 독점 네트워크"]}
+        description="대규모 트래픽 설계와 침해 사고 대응은 이론만으로 익히기 어렵습니다. ConnectX Academy는 실전 인프라 구축과 침해 실습 시나리오를 바탕으로 현업 경험을 가진 강사진이 직접 설계하고 밀착 교육합니다."
+        chips={["현직 실무자 강의", "실습 중심 커리큘럼", "수료 후 네트워크"]}
         ctaLabel="커리큘럼 살펴보기"
         ctaHref="/academy"
         image="/images/landing/academy.webp"
@@ -24,9 +30,9 @@ export default function Home() {
       />
       <VerticalHighlight
         badge="CONNECTX ADVISORY"
-        title="당신의 외부 기술기획실"
-        description="중소기업이나 스타트업에게 최고 수준의 CTO, CISO를 풀타임으로 고용하는 것은 불가능에 가깝습니다. ConnectX가 인프라 아키텍처 수립과 보안 거버넌스 규정 대응을 합리적 리테이너 파트너십을 통해 밀착 대행합니다."
-        chips={["인프라+보안 통합 진단", "기업 규모 맞춤 제안", "상시 자문 리테이너"]}
+        title="우리 회사에 맞는 IT 인프라와 보안, 함께 설계합니다"
+        description="전담 IT·보안 책임자를 채용하기 부담스러운 중소기업과 스타트업을 위해, ConnectX가 인프라 아키텍처 수립과 보안 체계 대응을 정기 자문 파트너십으로 함께합니다."
+        chips={["인프라+보안 통합 진단", "기업 규모 맞춤 제안", "정기 자문 리테이너"]}
         ctaLabel="Advisory 자세히 보기"
         ctaHref="/advisory"
         image="/images/landing/advisory.webp"
@@ -36,9 +42,9 @@ export default function Home() {
       />
       <VerticalHighlight
         badge="CONNECTX WELLNESS"
-        title="데이터 기반 맞춤 영양제 큐레이션"
-        description="매일 챙겨먹는 영양제, 맞춤 가이드라인 없이 과다복용하고 계시진 않나요? ConnectX는 식생활 자가진단 기록과 바이오 데이터 결합 모델링을 통해 오직 나에게 필요한 진짜 처방 패키지를 추천하고 매달 갱신 모니터링을 진행합니다."
-        chips={["의학/영양학 전문가 상담", "데이터 기반 추천 알고리즘", "주기적인 웰니스 관리"]}
+        title="선택 기준을 안내하는 건강기능식품"
+        description="영양제, 어떤 기준으로 선택하시나요? ConnectX는 브랜드·제품 정보·표시 성분을 정리해 비교할 수 있도록 돕고, 필요와 상황에 맞는 카테고리를 안내합니다."
+        chips={["표시 성분·정보 비교", "카테고리별 큐레이션", "구매 전 상담 지원"]}
         ctaLabel="맞춤 추천 받기"
         ctaHref="/wellness"
         image="/images/landing/wellness.webp"
@@ -46,6 +52,7 @@ export default function Home() {
         bg="bg-alt"
       />
       <TrustSection />
+      <ProcessSection />
       <FaqSection />
     </main>
   );

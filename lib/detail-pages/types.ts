@@ -5,7 +5,7 @@ export type HeroContent = {
   title: string;
   subtitle: string;
   positionBadge?: string;
-  ctas: { label: string; href: string }[];
+  ctas: { label: string; href: string; variant: "primary" | "secondary" }[];
   heroImage: { src: string; alt: string };
 };
 
