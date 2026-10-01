@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "ConnectX는 어떤 회사인가요?",
     answer:
-      "ConnectX는 IT 실무교육(Academy), IT 인프라·보안 자문(Advisory), 건강기능식품 셀렉션(Wellness)을 제공하는 브랜드입니다. 필요에 따라 하나의 서비스만 이용하시거나, 여러 서비스를 함께 이용하실 수 있습니다.",
+      "ConnectX는 IT 실무교육(Academy), IT 인프라·보안 자문(Advisory), 건강기능식품 셀렉션(Wellness)을 제공하는 브랜드입니다. 세 서비스는 같은 사람들의 신뢰에서 출발해 서로 연결되어 있으며, 필요에 따라 하나의 서비스만 이용하시거나 여러 서비스를 함께 이용하실 수 있습니다.",
   },
   {
     question: "서비스별로 따로 상담해야 하나요?",

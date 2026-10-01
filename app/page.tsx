@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import BentoSection from "@/components/landing/BentoSection";
 import VerticalHighlight from "@/components/landing/VerticalHighlight";
+import LoopSection from "@/components/landing/LoopSection";
 import TrustSection from "@/components/landing/TrustSection";
 import FaqSection from "@/components/landing/FaqSection";
 
@@ -51,6 +52,7 @@ export default function Home() {
         imageAlt="영양제 상담을 받는 모습"
         bg="bg-alt"
       />
+      <LoopSection />
       <TrustSection />
       <ProcessSection />
       <FaqSection />
