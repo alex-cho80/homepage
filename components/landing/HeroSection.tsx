@@ -38,14 +38,14 @@ export default function HeroSection() {
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
             href="#verticals"
-            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-base"
           >
             서비스 둘러보기
             <img src="/icons/landing/arrow-right.svg" alt="" aria-hidden className="size-3.5" />
           </a>
           <a
             href={landingDiagnosisMailto}
-            className="rounded-lg border border-cx-border bg-cx-bg px-7 py-3.5 text-base font-semibold text-cx-muted transition hover:text-white"
+            className="rounded-lg border border-cx-border bg-cx-bg px-5 py-2.5 text-sm font-semibold text-cx-muted transition hover:text-white sm:px-7 sm:py-3.5 sm:text-base"
           >
             무료 진단 신청
           </a>

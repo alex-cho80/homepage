@@ -397,3 +397,20 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공, `out/`
   산출물에서 해당 문구가 더 이상 없음을 확인.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — 모바일 CTA 버튼 사이즈 축소
+
+- 사용자 지적: 랜딩(서비스 둘러보기/커리큘럼 살펴보기/Advisory 자세히 보기/맞춤
+  추천 받기)과 각 상세 페이지의 파란색 신청 버튼이 모바일에서 크게 보임.
+- 원인: 버튼 패딩/폰트가 전부 고정값(`px-7 py-3.5 text-base`류)이라 데스크톱
+  기준 사이즈가 모바일에도 그대로 적용되고 있었음 — 반응형 분기 없음.
+- 수정: `px-5 py-2.5 text-sm` (모바일) → `sm:px-7 sm:py-3.5 sm:text-base|text-[15px]`
+  (데스크톱, 기존 사이즈 그대로 유지) 패턴을 아래 3곳에 적용:
+  - `components/landing/PrimaryButton.tsx` (VerticalHighlight CTA 3개)
+  - `components/landing/HeroSection.tsx` (랜딩 Hero 버튼 2개)
+  - `components/detail/ctaButtonStyles.ts` (Academy/Advisory/Wellness
+    Hero+하단 CTA 공용 스타일 — 이 한 파일 수정으로 3개 상세 페이지 전부 반영)
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공, `out/`
+  산출물에서 4곳 전부 `px-5 py-2.5 text-sm ... sm:px-7 sm:py-3.5` 클래스 렌더링
+  확인.
+- 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.

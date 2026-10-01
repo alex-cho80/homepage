@@ -10,7 +10,7 @@ export default function PrimaryButton({
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90"
+      className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-connectx-blue to-connectx-teal px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_8px_rgba(0,82,255,0.25)] transition hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-base"
     >
       {children}
       <img src="/icons/landing/arrow-right.svg" alt="" aria-hidden className="size-3.5" />
