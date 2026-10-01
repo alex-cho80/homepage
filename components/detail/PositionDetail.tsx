@@ -11,7 +11,7 @@ export default function PositionDetail({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-3xl break-keep text-justify px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-3xl break-keep text-left px-6 py-24 sm:py-28">
         <SectionHeading>{section.heading}</SectionHeading>
         <div className="mt-10 space-y-5">
           {section.paragraphs.map((paragraph) => (

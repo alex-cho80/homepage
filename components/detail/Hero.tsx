@@ -9,7 +9,7 @@ export default function Hero({ section }: { section: HeroContent }) {
   return (
     <section id={section.id} className="bg-cx-bg">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-24 sm:py-28 md:grid-cols-2 md:gap-20">
-        <div className="text-justify">
+        <div className="text-left">
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             {section.label}
           </p>

@@ -8,7 +8,7 @@ function externalProps(href: string) {
 export default function CtaSection({ section }: { section: CtaContent }) {
   return (
     <section id={section.id} className="border-t border-white/[0.08] bg-cx-bg-alt">
-      <div className="mx-auto max-w-3xl px-6 py-24 text-justify sm:py-28">
+      <div className="mx-auto max-w-3xl px-6 py-24 text-left sm:py-28">
         <h2
           className={
             section.headingClassName ??

@@ -11,7 +11,7 @@ export default function OfferingsGrid({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-5xl break-keep text-justify px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-5xl break-keep text-left px-6 py-24 sm:py-28">
         <SectionHeading>{section.heading}</SectionHeading>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {section.items.map((item) => (
@@ -22,7 +22,7 @@ export default function OfferingsGrid({
           ))}
         </div>
         {section.note && (
-          <p className="mt-8 break-keep text-justify text-xs leading-relaxed text-cx-dim">{section.note}</p>
+          <p className="mt-8 break-keep text-left text-xs leading-relaxed text-cx-dim">{section.note}</p>
         )}
       </div>
     </section>
