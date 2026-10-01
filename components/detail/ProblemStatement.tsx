@@ -11,7 +11,7 @@ export default function ProblemStatement({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-4xl px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-4xl break-keep px-6 py-24 sm:py-28">
         <SectionHeading>{section.heading}</SectionHeading>
         <ul className="mt-14 grid gap-5 sm:grid-cols-2">
           {section.items.map((item) => (

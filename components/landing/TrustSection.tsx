@@ -24,7 +24,7 @@ export default function TrustSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>WHY CONNECTX</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">왜 ConnectX인가</h2>
+          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">왜 ConnectX인가</h2>
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
           {points.map((point) => (
@@ -36,8 +36,8 @@ export default function TrustSection() {
                 <img src={point.icon} alt="" aria-hidden className="size-5" />
               </div>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-bold text-white">{point.title}</h3>
-                <p className="text-sm leading-relaxed text-cx-muted">{point.description}</p>
+                <h3 className="break-keep text-xl font-bold text-white">{point.title}</h3>
+                <p className="break-keep text-sm leading-relaxed text-cx-muted">{point.description}</p>
               </div>
             </div>
           ))}

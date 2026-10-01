@@ -33,7 +33,7 @@ export default function FaqSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>FAQ</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">자주 묻는 질문</h2>
+          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">자주 묻는 질문</h2>
         </div>
         <div className="flex w-full max-w-[800px] flex-col gap-4">
           {faqs.map((faq, i) => {
@@ -49,7 +49,7 @@ export default function FaqSection() {
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 text-left"
                 >
-                  <span className="text-base font-bold text-white">{faq.question}</span>
+                  <span className="break-keep text-base font-bold text-white">{faq.question}</span>
                   <img
                     src="/icons/landing/chevron-down.svg"
                     alt=""
@@ -58,7 +58,7 @@ export default function FaqSection() {
                   />
                 </button>
                 {open && (
-                  <p className="mt-4 text-sm leading-relaxed text-cx-muted">{faq.answer}</p>
+                  <p className="mt-4 break-keep text-sm leading-relaxed text-cx-muted">{faq.answer}</p>
                 )}
               </div>
             );

@@ -14,7 +14,7 @@ export default function ConnectAxes({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-5xl px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-5xl break-keep px-6 py-24 sm:py-28">
         <SectionHeading>{section.heading}</SectionHeading>
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
           {section.axes.map((axis, i) => (

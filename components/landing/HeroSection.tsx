@@ -27,11 +27,11 @@ export default function HeroSection() {
 
       <div className="relative flex w-full max-w-[800px] flex-col items-center gap-8 text-center">
         <SectionBadge>CONNECTX SYNERGY</SectionBadge>
-        <h1 className="text-5xl font-extrabold leading-[1.15] text-white sm:text-[80px]">
+        <h1 className="break-keep text-5xl font-extrabold leading-[1.15] text-white sm:text-[80px]">
           연결이 만드는
           <span className="text-connectx-teal"> 변화</span>
         </h1>
-        <p className="max-w-[640px] text-lg leading-relaxed text-cx-muted sm:text-xl">
+        <p className="max-w-[640px] break-keep text-lg leading-relaxed text-cx-muted sm:text-xl">
           IT 실무교육ㆍ인프라 및 보안 자문ㆍ건강기능식품 선택을 돕는 ConnectX입니다.
           필요한 서비스를 진단부터 지속관리까지 함께합니다.
         </p>

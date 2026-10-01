@@ -33,8 +33,8 @@ export default function ProcessSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>METHODOLOGY</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">이렇게 함께합니다</h2>
-          <p className="max-w-[520px] text-base text-cx-muted">
+          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">이렇게 함께합니다</h2>
+          <p className="max-w-[520px] break-keep text-base text-cx-muted">
             문제를 명확히 짚어내고 솔루션을 설계하여 실현한 뒤, 개선 효과가 지속되도록
             전 여정을 함께합니다.
           </p>
@@ -52,8 +52,8 @@ export default function ProcessSection() {
                 )}
               </div>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-bold text-white">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-cx-muted">{step.description}</p>
+                <h3 className="break-keep text-xl font-bold text-white">{step.title}</h3>
+                <p className="break-keep text-sm leading-relaxed text-cx-muted">{step.description}</p>
               </div>
             </div>
           ))}

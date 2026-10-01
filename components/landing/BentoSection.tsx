@@ -43,7 +43,7 @@ export default function BentoSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>VERTICALS</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">필요한 서비스를 선택하세요</h2>
+          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">필요한 서비스를 선택하세요</h2>
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
           {verticals.map((v) => (
@@ -68,8 +68,8 @@ export default function BentoSection() {
                   </div>
                   <span className="text-lg font-bold text-white">{v.name}</span>
                 </div>
-                <h3 className="text-xl font-semibold leading-tight text-white sm:text-[28px]">{v.tagline}</h3>
-                <p className="text-[15px] leading-relaxed text-cx-muted">{v.description}</p>
+                <h3 className="break-keep text-[19px] font-semibold leading-tight text-white">{v.tagline}</h3>
+                <p className="break-keep text-[15px] leading-relaxed text-cx-muted">{v.description}</p>
               </div>
               <div className="flex items-center justify-between whitespace-nowrap">
                 <Link

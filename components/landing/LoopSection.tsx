@@ -27,10 +27,10 @@ export default function LoopSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>CONNECT LOOP</SectionBadge>
-          <h2 className="text-3xl font-semibold text-white sm:text-[44px]">
+          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">
             세 가지가 서로를 연결합니다
           </h2>
-          <p className="max-w-[560px] text-base text-cx-muted">
+          <p className="max-w-[560px] break-keep text-base text-cx-muted">
             Academy와 Advisory에서 만난 사람들의 신뢰가 Wellness로 이어지고, 그 신뢰는
             다시 ConnectX 전체를 더 단단하게 만듭니다.
           </p>
@@ -48,8 +48,8 @@ export default function LoopSection() {
                   {step.name}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-white">{step.title}</h3>
-              <p className="text-sm leading-relaxed text-cx-muted">{step.body}</p>
+              <h3 className="break-keep text-lg font-bold text-white">{step.title}</h3>
+              <p className="break-keep text-sm leading-relaxed text-cx-muted">{step.body}</p>
             </div>
           ))}
         </div>
@@ -58,7 +58,7 @@ export default function LoopSection() {
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             앞으로의 방향
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-cx-muted">
+          <p className="mt-3 break-keep text-[15px] leading-relaxed text-cx-muted">
             장기적으로는 Advisory의 보안·개인정보 보호 역량을 기업 임직원 건강관리
             데이터까지 연결해, 신뢰가 신뢰를 낳는 선순환 구조로 확장할 계획입니다.
           </p>

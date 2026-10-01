@@ -26,7 +26,7 @@ export default function FaqSection({ section, tone }: { section: FaqContent; ton
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 text-left"
                 >
-                  <span className="text-[15px] font-semibold text-white">{item.question}</span>
+                  <span className="break-keep text-[15px] font-semibold text-white">{item.question}</span>
                   <img
                     src="/icons/landing/chevron-down.svg"
                     alt=""
@@ -35,7 +35,7 @@ export default function FaqSection({ section, tone }: { section: FaqContent; ton
                   />
                 </button>
                 {open && (
-                  <p className="mt-4 text-[15px] leading-[1.6] text-cx-muted">{item.answer}</p>
+                  <p className="mt-4 break-keep text-[15px] leading-[1.6] text-cx-muted">{item.answer}</p>
                 )}
               </div>
             );

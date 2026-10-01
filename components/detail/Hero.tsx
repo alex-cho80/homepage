@@ -13,7 +13,7 @@ export default function Hero({ section }: { section: HeroContent }) {
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             {section.label}
           </p>
-          <h1 className="mt-4 text-[40px] font-semibold leading-[1.1] tracking-tight text-white sm:text-[52px]">
+          <h1 className="mt-4 break-keep text-[40px] font-semibold leading-[1.1] tracking-tight text-white sm:text-[52px]">
             {section.title}
           </h1>
           {section.positionBadge && (
@@ -21,7 +21,7 @@ export default function Hero({ section }: { section: HeroContent }) {
               {section.positionBadge}
             </p>
           )}
-          <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.6] text-cx-muted md:mx-0">
+          <p className="mx-auto mt-6 max-w-2xl break-keep text-[17px] leading-[1.6] text-cx-muted md:mx-0">
             {section.subtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">

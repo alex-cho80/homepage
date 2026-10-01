@@ -592,3 +592,46 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 검증: `tsc --noEmit` 통과, `npm run build` 성공, `out/` 산출물에
   `whitespace-pre-line` 클래스와 `\n` 포함된 문자열 렌더링 확인.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — 사이트 전체 PC/모바일 줄바꿈 전수 점검
+
+- 사용자 요청: connectx.kr을 PC/모바일로 직접 보고 줄바꿈·비최적화 요소를
+  찾아 수정, ui-ux-pro-max 스킬 활용.
+- 헤드리스 브라우저가 없어 "직접 본다"를 다음 방식으로 대체: (1) 모든
+  h1/h2/h3·버튼·칩·태그 텍스트와 폰트 크기/컨테이너 폭을 코드에서 추출,
+  (2) WSL 마운트에서 실제 Noto Sans KR 가변 폰트
+  (`/mnt/c/Windows/Fonts/NotoSansKR-VF.ttf`)를 찾아 PIL로 **실제 렌더링
+  폭을 픽셀 단위로 정밀 측정**, semibold/bold 등 실제 폰트 굵기까지
+  반영. 각 요소의 실제 컨테이너 가용폭(패딩 제외)과 비교해 진짜 오버플로우만
+  선별(문단형 h2가 2줄로 자연스럽게 나뉘는 건 정상으로 간주, 버튼/칩처럼
+  한 줄이어야 하는 요소의 오버플로우만 "버그"로 판정).
+- **핵심 발견 1 — 한글 word-break 근본 원인**: 브라우저 기본값에서 한글은
+  "단어" 개념이 없어 아무 음절 사이에서나 줄바꿈된다 — 이게 바로 지난
+  Wellness CTA 제목이 "기준부/터 꼼꼼하게"처럼 음절 중간에서 깨졌던 근본
+  원인. Tailwind `break-keep`(`word-break: keep-all`)을 적용하면 띄어쓰기
+  지점에서만 줄바꿈되어 훨씬 자연스러움. `word-break`는 상속 속성이라
+  섹션 최상위 컨테이너 한 곳에만 걸어도 하위 텍스트 전부에 적용됨을
+  활용해 랜딩 6개 섹션 + 상세 페이지 공용 컴포넌트 9개(Hero, SectionHeading,
+  CtaSection, ProblemStatement, ConnectAxes, TrustPoints, OfferingsGrid,
+  AudienceSplit, PositionDetail, ProcessSteps, 양쪽 FaqSection) + Footer +
+  개인정보처리방침 페이지까지 전부 적용.
+- **핵심 발견 2 — BentoSection 카드 제목 실제 오버플로우**: "필요한 서비스를
+  선택하세요" 카드 3개의 태그라인(`text-xl sm:text-[28px]`)이 측정 결과
+  **모바일(279px 가용)뿐 아니라 데스크톱(304px 가용)에서도** 전부
+  오버플로우(329~405px 필요) — 1200px대 일반 데스크톱 화면에서도 카드
+  제목이 줄바꿈되고 있었음(이 태그라인은 지난 2026-09-30 UX 감사 때
+  직접 교체한 문구라 길이 체크 없이 넣은 게 원인으로 추정). `text-[19px]`
+  고정 크기로 축소해 세 카드 전부 모바일·데스크톱 모두 한 줄에 들어가도록
+  수정(반응형 분기 불필요 — 두 가용폭 차이가 크지 않아 하나의 크기로 충분).
+- **CtaSection 구조 개선**: 지난 세션에서 Wellness 제목이 길어 CtaSection
+  전체(Academy/Advisory 포함)를 13px로 줄였던 것을 되돌림 —
+  `CtaContent` 타입에 `headingClassName?` 선택적 필드 추가, 기본값은
+  원래 크기(32px/40px, 다른 섹션 제목과 통일)로 복원하고 Wellness
+  컨텐츠에서만 13px/28px 오버라이드 적용. Academy/Advisory는 원래도
+  한 줄에 들어가는 짧은 제목이라 불필요하게 작아져 있었던 걸 바로잡음.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공,
+  `out/` 산출물에서 Academy CTA 제목 32px 복원·Wellness 13px 유지·
+  BentoSection 19px·`break-keep` 전 페이지 반영 전부 확인.
+- 다음에 필요한 것: 없음 — 커밋/푸시 대기 중. (참고: `ui-ux-pro-max`는
+  여전히 Skill 도구로 호출 불가 — 이번엔 스킬 대신 실제 폰트 픽셀 측정이라는
+  더 정밀한 방법으로 대체.)

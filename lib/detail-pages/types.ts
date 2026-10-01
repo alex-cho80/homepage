@@ -85,6 +85,8 @@ export type CtaContent = {
   type: "cta";
   id: string;
   heading: string;
+  /** Override the default heading size, e.g. for an unusually long headline. */
+  headingClassName?: string;
   body: string;
   primaryLabel: string;
   primaryHref: string;
