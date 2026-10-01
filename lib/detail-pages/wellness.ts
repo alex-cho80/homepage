@@ -8,7 +8,8 @@ export const wellnessContent: DetailPageContent = {
       id: "hero",
       label: "건강기능식품 셀렉션",
       title: "ConnectX Wellness",
-      subtitle: "건강ㆍ전문가ㆍ데이터를 연결해, 제품 정보를 비교하고 선택할 수 있도록 돕습니다.",
+      subtitle:
+        "일을 챙기는 당신, 이제 나를 챙길 차례입니다. 바쁜 직장인과 가족을 위해 건강기능식품의 선택 기준을 알기 쉽게 안내합니다. 브랜드와 표시 성분, 제품 정보를 비교하며 나의 필요와 상황을 고려해 선택해 보세요.",
       ctas: [
         { label: "내 맞춤 추천 받기", href: wellnessRecommendationMailto, variant: "primary" },
         { label: "제품 카테고리 보기", href: "#offerings", variant: "secondary" },
@@ -43,7 +44,7 @@ export const wellnessContent: DetailPageContent = {
         },
         {
           label: "데이터 연결",
-          body: "한 번의 추천으로 끝나지 않습니다. 기록을 바탕으로 계속 맞춰가며 필요할 때 다시 챙깁니다.",
+          body: "한 번의 추천으로 끝나지 않습니다. 필요와 상황이 바뀌면 언제든 다시 문의해 새로 안내받으실 수 있습니다.",
         },
       ],
     },
@@ -68,9 +69,9 @@ export const wellnessContent: DetailPageContent = {
       heading: "진단 → 큐레이션/설계 → 실행 → 지속관리",
       steps: [
         { label: "진단", body: "간단한 체크리스트로 지금 몸 상태와 생활 습관을 확인합니다." },
-        { label: "큐레이션/설계", body: "전문가와 데이터를 바탕으로 맞춤 제품 조합을 구성합니다." },
+        { label: "큐레이션/설계", body: "문의 내용을 바탕으로 맞춤 제품 조합을 안내합니다." },
         { label: "실행", body: "구성된 제품을 편하게 받아보실 수 있도록 연결합니다." },
-        { label: "지속관리", body: "섭취 기록과 변화에 맞춰 다음 추천을 계속 업데이트합니다." },
+        { label: "지속관리", body: "필요와 상황 변화에 맞춰 다시 문의하시면 새로 안내해드립니다." },
       ],
     },
     {
@@ -91,7 +92,7 @@ export const wellnessContent: DetailPageContent = {
       type: "trust",
       id: "trust",
       heading: "믿고 선택하는 이유",
-      points: ["식약처 표시기준·원료·소비기한을 기준으로 선별한 제품을 소개합니다", "광고비가 아니라 필요에 따라 추천합니다", "먹는 것을 계속 기록하고 관리합니다"],
+      points: ["식약처 표시기준·원료·소비기한을 기준으로 선별한 제품을 소개합니다", "광고비가 아니라 필요에 따라 추천합니다", "필요와 상황이 바뀌면 언제든 다시 안내해드립니다"],
     },
     {
       type: "faq",
@@ -113,7 +114,7 @@ export const wellnessContent: DetailPageContent = {
         },
         {
           question: "추천이 마음에 안 들면 바꿀 수 있나요?",
-          answer: "네, 기록과 피드백을 바탕으로 추천을 다시 조정해드립니다.",
+          answer: "네, 말씀해 주시는 내용을 바탕으로 다시 안내해드립니다.",
         },
       ],
     },

@@ -32,8 +32,9 @@ export default function HeroSection() {
           <span className="text-connectx-teal"> 변화</span>
         </h1>
         <p className="max-w-[640px] break-keep text-lg leading-relaxed text-cx-muted sm:text-xl">
-          IT 실무교육ㆍ인프라 및 보안 자문ㆍ건강기능식품 선택을 돕는 ConnectX입니다.
-          필요한 서비스를 진단부터 지속관리까지 함께합니다.
+          일의 성장과 일상의 건강을 연결합니다. 실무에 필요한 배움, 기업에 맞는 IT
+          인프라·보안 자문, 바쁜 일상 속 건강을 위한 선택까지 — 일하는 사람과 그
+          사람이 속한 조직의 더 나은 내일을 함께 만듭니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a

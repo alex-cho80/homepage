@@ -6,10 +6,11 @@ const verticals = [
     slug: "academy",
     icon: "/icons/landing/graduation-cap.svg",
     name: "ConnectX Academy",
-    tagline: "현업에 적용하는 IT 실무교육",
+    tagline: "더 잘할 수 있는 역량",
     description:
-      "기초 개념부터 실제 운영·장애 대응까지, 복잡한 인프라와 클라우드 보안을 실습으로 익히는 교육입니다.",
+      "현업에서 마주하는 IT 인프라·보안 과제를 실습으로 익히고, 업무에 적용할 수 있는 역량을 키웁니다.",
     tag: "실무 교육 프로그램",
+    linkLabel: "교육 과정 살펴보기",
     accent: "blue",
     highlighted: false,
   },
@@ -17,10 +18,11 @@ const verticals = [
     slug: "advisory",
     icon: "/icons/landing/shield.svg",
     name: "ConnectX Advisory",
-    tagline: "기업을 위한 IT 인프라·보안 자문",
+    tagline: "안심하고 일할 수 있는 환경",
     description:
-      "전담 인프라·보안 책임자가 없어도 초기 스타트업 및 중소기업이 안전하고 탄탄하게 성장할 수 있도록 돕습니다.",
+      "우리 회사의 규모와 상황에 맞는 IT 인프라·보안 방향을 정하고, 실행을 위한 우선순위를 함께 세웁니다.",
     tag: "IT 인프라·보안 자문",
+    linkLabel: "자문 서비스 살펴보기",
     accent: "blue",
     highlighted: true,
   },
@@ -28,10 +30,11 @@ const verticals = [
     slug: "wellness",
     icon: "/icons/landing/heart.svg",
     name: "ConnectX Wellness",
-    tagline: "선택 기준을 안내하는 건강기능식품",
+    tagline: "나를 챙길 수 있는 일상",
     description:
-      "홍보성 정보에 기대지 않고, 표시 성분과 제품 정보를 비교해 나에게 맞는 건강기능식품을 선택할 수 있도록 돕습니다.",
+      "바쁜 일상에서도 건강을 위한 선택이 어렵지 않도록, 건강기능식품의 성분과 제품 정보를 알기 쉽게 안내합니다.",
     tag: "건강기능식품 셀렉션",
+    linkLabel: "건강기능식품 살펴보기",
     accent: "teal",
     highlighted: false,
   },
@@ -74,9 +77,9 @@ export default function BentoSection() {
               <div className="flex items-center justify-between whitespace-nowrap">
                 <Link
                   href={`/${v.slug}`}
-                  className="text-sm font-semibold text-connectx-teal transition hover:opacity-80"
+                  className="break-keep text-sm font-semibold text-connectx-teal transition hover:opacity-80"
                 >
-                  자세히 보기 →
+                  {v.linkLabel} →
                 </Link>
                 <span className="text-xs text-cx-dim">{v.tag}</span>
               </div>

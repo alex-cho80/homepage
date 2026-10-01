@@ -4,20 +4,20 @@ const steps = [
   {
     number: "01",
     name: "Academy",
-    title: "IT 실무교육으로 만난 사람들",
-    body: "인프라/보안 실무를 함께 공부하는 수강생들 — 대부분 IT·사무직 직장인입니다.",
+    title: "실무에 필요한 지식과 경험을 연결합니다",
+    body: "배움으로 역량을 키웁니다.",
   },
   {
     number: "02",
     name: "Advisory",
-    title: "인프라·보안 자문으로 쌓은 신뢰",
-    body: "기업의 민감한 시스템과 데이터를 다루며 쌓은 신뢰는 쉽게 만들어지지 않습니다.",
+    title: "기업의 과제에 맞는 기술과 실행 방법을 연결합니다",
+    body: "자문으로 업무의 기반을 다집니다.",
   },
   {
     number: "03",
     name: "Wellness",
-    title: "그 신뢰를 바탕으로 건강관리까지",
-    body: "Wellness의 첫 고객은 바로 그 신뢰를 가진 사람들 — 같은 IT·사무직 직장인입니다.",
+    title: "건강을 위한 선택에 필요한 정보와 제품을 연결합니다",
+    body: "건강한 일상으로 성장을 이어갑니다.",
   },
 ] as const;
 
@@ -28,11 +28,12 @@ export default function LoopSection() {
         <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>CONNECT LOOP</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">
-            세 가지가 서로를 연결합니다
+            성장하는 일에도, 건강한 일상에도 필요한 연결
           </h2>
           <p className="max-w-[560px] break-keep text-base text-cx-muted">
-            Academy와 Advisory에서 만난 사람들의 신뢰가 Wellness로 이어지고, 그 신뢰는
-            다시 ConnectX 전체를 더 단단하게 만듭니다.
+            새로운 기술을 배우고, 안정적인 환경에서 일하며, 바쁜 하루 속에서도 나를
+            챙기는 것 — ConnectX는 이 모든 것이 일하는 사람에게 필요한 기반이라고
+            생각합니다.
           </p>
         </div>
 

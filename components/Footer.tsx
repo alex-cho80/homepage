@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex w-full max-w-[320px] flex-col items-start gap-4 text-left">
             <img src="/logo-dark.png" alt="ConnectX" className="h-7 w-auto object-contain" />
             <p className="break-keep text-[13px] leading-relaxed text-cx-muted">
-              IT 실무교육, IT 인프라·보안 자문, 그리고 건강기능식품 셀렉션을 하나의 브랜드로 연결합니다.
+              IT 실무교육, 인프라·보안 자문, 건강기능식품 큐레이션을 통해 일하는 사람의 역량과 업무 환경, 건강한 일상을 함께 지원합니다.
             </p>
           </div>
           <div className="flex gap-16 sm:gap-20">
