@@ -122,7 +122,7 @@ export const wellnessContent: DetailPageContent = {
       type: "cta",
       id: "cta",
       heading: "나와 가족을 위한 건강기능식품, 선택 기준부터 꼼꼼하게",
-      headingClassName: "break-keep text-[13px] font-semibold leading-tight tracking-tight text-white sm:text-[28px]",
+      headingClassName: "break-keep text-center text-[13px] font-semibold leading-tight tracking-tight text-white sm:text-[28px]",
       body: "브랜드, 제품 정보, 구매 조건을 확인하고 비교해 보세요.\n더 궁금한 점은 언제든 문의해 주세요.",
       primaryLabel: "스마트스토어에서 제품 보기",
       primaryHref: "https://smartstore.naver.com/connectx",

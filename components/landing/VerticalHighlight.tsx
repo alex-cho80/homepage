@@ -31,7 +31,7 @@ export default function VerticalHighlight({
         <div className="flex flex-1 flex-col items-start gap-8 text-left">
           <div className="flex flex-col items-start gap-4">
             <SectionBadge>{badge}</SectionBadge>
-            <h2 className="break-keep text-3xl font-bold leading-tight text-white sm:text-[38px]">{title}</h2>
+            <h2 className="break-keep text-[26px] font-bold leading-tight text-white sm:text-[38px]">{title}</h2>
             <p className="break-keep text-base leading-relaxed text-cx-muted">{description}</p>
           </div>
           <div className="flex flex-wrap gap-3">

@@ -12,7 +12,7 @@ export default function CtaSection({ section }: { section: CtaContent }) {
         <h2
           className={
             section.headingClassName ??
-            "break-keep text-[32px] font-semibold leading-tight tracking-tight text-white sm:text-[40px]"
+            "break-keep text-center text-[28px] font-semibold leading-tight tracking-tight text-white sm:text-[40px]"
           }
         >
           {section.heading}

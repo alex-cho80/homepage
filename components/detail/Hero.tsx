@@ -13,7 +13,7 @@ export default function Hero({ section }: { section: HeroContent }) {
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             {section.label}
           </p>
-          <h1 className="mt-4 break-keep text-[40px] font-semibold leading-[1.1] tracking-tight text-white sm:text-[52px]">
+          <h1 className="mt-4 break-keep text-center text-[40px] font-semibold leading-[1.1] tracking-tight text-white sm:text-[52px]">
             {section.title}
           </h1>
           {section.positionBadge && (

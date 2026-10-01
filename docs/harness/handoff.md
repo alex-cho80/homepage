@@ -716,3 +716,60 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공,
   `grep`으로 `text-justify`/`text-center` 코드베이스 전체에서 0건 확인.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — 상세페이지 "타이틀"만 가운데 정렬로 복원
+
+- 사용자가 "Academy/Advisory/Wellness 페이지의 타이틀은 가운데 정렬을
+  유지해야 할 것 같다"고 요청. 범위 확인 질문(Hero 제목만 vs 페이지 내
+  모든 섹션 제목)에 "페이지 안의 모든 섹션 제목"으로 답변.
+- 수정: 섹션 "제목(heading)" 요소에만 `text-center`를 다시 추가하고
+  본문/버튼은 왼쪽 정렬 그대로 유지(지난 커밋에서 전체를 왼쪽으로 통일한
+  범위를 타이틀만 되돌림):
+  - `components/detail/Hero.tsx`의 `<h1>`에 `text-center` 추가(라벨/
+    서브타이틀/버튼은 부모의 `text-left` 그대로 상속).
+  - `components/detail/SectionHeading.tsx`(문제 제기/3축 연결/프로세스/
+    제공 서비스/대상/신뢰 포인트/FAQ 헤딩에 전부 쓰이는 공용 컴포넌트)를
+    `text-center`로 변경 — 이 한 곳 수정으로 세 페이지 모든 섹션 제목에
+    일괄 반영됨.
+  - `components/detail/CtaSection.tsx`의 `<h2>`에 `text-center` 추가(본문
+    `<p>`은 왼쪽 정렬 유지), Wellness 전용 `headingClassName` 오버라이드
+    (`lib/detail-pages/wellness.ts`)에도 `text-center` 추가.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공.
+- 사용자가 거의 동시에 "모바일에서 글자가 폭에 안 맞아 줄바꿈되고
+  가독성이 안 좋다"고 추가 요청 — 구체적 위치 없이 일반론이라, 지난
+  세션의 폰트 픽셀 실측(헤딩/카드 라벨 전수 검사, BentoSection·Academy
+  헤딩 수정 완료) 결과를 근거로 "추가로 발견된 오버플로우 없음"을
+  보고하고 스크린샷 요청함 — 캐시 문제(방금 전 정렬 건도 캐시였음)일
+  가능성 언급.
+- 다음에 필요한 것: 1) 타이틀 센터링 커밋/푸시 대기. 2) 모바일 가독성
+  건은 사용자 스크린샷 수신 후 구체적 위치 파악 필요.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — 실제 기기 스크린샷 기반 모바일 헤딩 줄바꿈 수정
+
+- 사용자가 실제 안드로이드 기기(SKT, 1080x2340) 스크린샷 6장을 첨부 —
+  랜딩/Academy/Advisory/Wellness 전반을 보여줌. 대부분 깔끔했으나 2곳이
+  3줄로 어색하게 줄바꿈됨: VerticalHighlight의 Advisory 제목("우리 회사에
+  맞는 IT" / "인프라와 보안, 함께" / "설계합니다")과 ConnectAxes의 Advisory
+  제목("기업" / "문제ㆍ기술ㆍ솔루션을" / "연결합니다" — "기업"이 단독으로
+  한 줄을 차지).
+- **실제 기기 폭 역산**: 기존에 가정했던 모바일 가용폭(363px)으로 시뮬레이션
+  해보니 두 경우 다 2줄로 예측돼 실제 결과와 불일치 — 실제 줄바꿈 지점
+  (예: "IT" 다음에서 끊기고 "인프라와"가 다음 줄로 안 붙는 지점)을 역산해
+  실제 가용폭이 약 340px(기기 DPR을 2.625가 아닌 더 높은 값으로 재추정)
+  임을 확인. 이 보정된 340px로 다시 시뮬레이션하니 스크린샷의 정확한
+  줄바꿈 지점까지 그대로 재현됨 — 모델 검증 완료 후 적정 크기 탐색.
+  - 이번에도 `ui-ux-pro-max` 스킬의 Skill 도구 호출은 불가해 동일하게
+    실제 폰트(Noto Sans KR VF) + Python 그리디 줄바꿈 시뮬레이션으로 대체.
+- 수정: `components/detail/SectionHeading.tsx` 32px→28px(모바일만,
+  데스크톱 40px 유지), `components/landing/VerticalHighlight.tsx` h2
+  `text-3xl`(30px)→`text-[26px]`, `components/detail/CtaSection.tsx`
+  기본 헤딩도 동일하게 32px→28px(일관성 차원, Wellness 전용 오버라이드는
+  무관). 보정된 340px 기준으로 두 컴포넌트가 쓰이는 모든 텍스트(상세
+  페이지 섹션 제목 16개, VerticalHighlight 3개, 랜딩 섹션 인트로 5개)를
+  전수 시뮬레이션해 단독 단어가 한 줄을 차지하는 경우가 더 없는지 확인
+  후 적용 — 해당 2곳만 유일한 문제였음.
+- 검증: `tsc --noEmit` 통과, `npm run build` 성공, `out/` 산출물에서 새
+  크기 반영 확인 + 시뮬레이션으로 원래 3줄이었던 두 헤딩이 깔끔한 2줄로
+  바뀌는 것 확인.
+- 다음에 필요한 것: 사용자 요청대로 이번 건 + 지난 "타이틀 가운데 정렬"
+  건을 한 번에 커밋/푸시.
