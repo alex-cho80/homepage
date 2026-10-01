@@ -81,12 +81,6 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-bold text-white">7. 문의처</h2>
             <p className="mt-3">이메일: fortunecho@naver.com</p>
           </section>
-
-          <p className="border-t border-cx-border pt-6 text-sm text-cx-dim">
-            본 방침은 웹사이트의 현재 기술적 데이터 처리 방식을 기준으로 작성된 초안이며, 사업자
-            등록 정보 및 실제 운영 정책이 확정되는 대로 사업 담당자의 검토를 거쳐 보완될 수
-            있습니다.
-          </p>
         </div>
       </div>
     </div>
