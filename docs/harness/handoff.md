@@ -579,3 +579,16 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
   `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중. 사용자가 실제 배포 화면에서
   최종 확인 권장.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — Wellness CTA 본문 수동 줄바꿈
+
+- 사용자 요청: "브랜드, 제품 정보, 구매 조건을 확인하고 비교해 보세요." /
+  "더 궁금한 점은 언제든 문의해 주세요." 두 문장을 항상 이 지점에서
+  줄바꿈.
+- `components/detail/CtaSection.tsx`의 본문 `<p>`에 `whitespace-pre-line`
+  클래스 추가(공유 컴포넌트이므로 Academy/Advisory는 줄바꿈 문자가 없어
+  영향 없음), `lib/detail-pages/wellness.ts`의 해당 `body` 문자열 중간에
+  `\n` 삽입.
+- 검증: `tsc --noEmit` 통과, `npm run build` 성공, `out/` 산출물에
+  `whitespace-pre-line` 클래스와 `\n` 포함된 문자열 렌더링 확인.
+- 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.

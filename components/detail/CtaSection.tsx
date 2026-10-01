@@ -12,7 +12,7 @@ export default function CtaSection({ section }: { section: CtaContent }) {
         <h2 className="text-[13px] font-semibold leading-tight tracking-tight text-white sm:text-[28px]">
           {section.heading}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-[17px] leading-[1.6] text-cx-muted">
+        <p className="mx-auto mt-5 max-w-xl whitespace-pre-line text-[17px] leading-[1.6] text-cx-muted">
           {section.body}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
