@@ -30,7 +30,7 @@ export default function TrustSection() {
           {points.map((point) => (
             <div
               key={point.title}
-              className="flex flex-col gap-5 rounded-2xl border border-cx-border bg-cx-card p-10"
+              className="flex flex-col gap-5 rounded-2xl border border-cx-border bg-cx-card p-6 sm:p-10"
             >
               <div className="flex size-12 items-center justify-center rounded-xl border border-connectx-blue bg-connectx-blue/10">
                 <img src={point.icon} alt="" aria-hidden className="size-5" />

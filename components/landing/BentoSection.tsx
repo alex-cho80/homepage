@@ -49,7 +49,7 @@ export default function BentoSection() {
           {verticals.map((v) => (
             <div
               key={v.slug}
-              className={`flex h-[500px] flex-col justify-between rounded-3xl border p-10 ${
+              className={`flex flex-col justify-between rounded-3xl border p-6 sm:h-[500px] sm:p-10 ${
                 v.highlighted
                   ? "border-connectx-blue bg-cx-bg"
                   : "border-cx-border bg-cx-card"
@@ -68,7 +68,7 @@ export default function BentoSection() {
                   </div>
                   <span className="text-lg font-bold text-white">{v.name}</span>
                 </div>
-                <h3 className="text-[28px] font-semibold leading-tight text-white">{v.tagline}</h3>
+                <h3 className="text-xl font-semibold leading-tight text-white sm:text-[28px]">{v.tagline}</h3>
                 <p className="text-[15px] leading-relaxed text-cx-muted">{v.description}</p>
               </div>
               <div className="flex items-center justify-between whitespace-nowrap">

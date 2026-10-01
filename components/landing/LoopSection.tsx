@@ -40,7 +40,7 @@ export default function LoopSection() {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="flex flex-col gap-4 rounded-2xl border border-cx-border bg-cx-card p-8"
+              className="flex flex-col gap-4 rounded-2xl border border-cx-border bg-cx-card p-6 sm:p-8"
             >
               <div className="flex items-center gap-3">
                 <span className="text-3xl font-extrabold text-connectx-teal">{step.number}</span>
@@ -54,7 +54,7 @@ export default function LoopSection() {
           ))}
         </div>
 
-        <div className="w-full max-w-[800px] rounded-2xl border border-dashed border-connectx-teal/40 bg-connectx-teal/[0.05] p-8 text-center">
+        <div className="w-full max-w-[800px] rounded-2xl border border-dashed border-connectx-teal/40 bg-connectx-teal/[0.05] p-6 text-center sm:p-8">
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             앞으로의 방향
           </p>
