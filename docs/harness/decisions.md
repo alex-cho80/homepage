@@ -49,3 +49,18 @@
   비용/의존성을 감수하지 않고 기존 mailto 방식(2026-09-29 도입)을
   그대로 유지하기로 사용자가 확인. 추후 실제 폼 도입을 원하면 이 결정을
   재논의할 것. (2026-09-30)
+- **npm audit 취약점 재검토 (v1.0 push 시 GitHub이 31건 경고) — 방치 결정
+  유지**: `npm audit`으로 직접 확인한 결과 실제로는 7개 패키지 그룹(6
+  high + 1 critical), 개별 CVE 기준으로는 약 40건으로 GitHub Dependabot이
+  세분화해서 보여주는 "31건"과 같은 근본 원인 집합임을 확인 — 2026-08-18에
+  이미 검토/방치를 결정한 `next`(14.2.35→16.3.7 필요)와 `postcss`/`glob`에
+  더해 `js-yaml`, `brace-expansion`이 새로 이름이 붙었지만, 둘 다
+  `eslint`/`eslint-config-next`의 개발용 전이 의존성(빌드/린트 시점에만
+  실행, 배포되는 정적 사이트 번들에는 포함 안 됨)이라 동일한 논리로 실질
+  노출 없음. `next` 항목에 RCE(Remote Code Execution) 등급 취약점 2건이
+  새로 포함되어 있었으나 전부 self-host 서버(Server Actions, Image
+  Optimization API, Windows 서버 등)에서만 발동하는 이슈이고, 이 사이트는
+  `next.config.mjs`의 `output: "export"`로 정적 HTML만 생성해 GitHub
+  Pages가 서빙하므로 Next.js 서버 프로세스 자체가 존재하지 않아 해당
+  공격면이 없음. 따라서 기존 방치 결정을 그대로 유지. Next 16 업그레이드는
+  여전히 별도 작업으로 남겨둠. (2026-09-30)
