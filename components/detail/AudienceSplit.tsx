@@ -11,7 +11,7 @@ export default function AudienceSplit({
 }) {
   return (
     <section id={section.id} className={tone === "bg-alt" ? "bg-cx-bg-alt" : "bg-cx-bg"}>
-      <div className="mx-auto max-w-4xl break-keep px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-4xl break-keep text-justify px-6 py-24 sm:py-28">
         <SectionHeading>{section.heading}</SectionHeading>
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {section.columns.map((column) => (

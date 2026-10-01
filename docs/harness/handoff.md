@@ -659,3 +659,45 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공,
   `out/` 산출물에서 모든 신규 문구와 과장 표현 수정분 렌더링 확인.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — Academy 프로세스 헤딩 수정 + 전역 정렬 text-justify 통일
+
+- Academy 상세페이지 "진단 → 큐레이션/설계 → 실행 → 지속관리, Academy에서는
+  이렇게 이어집니다" 헤딩이 모바일에서 어색하게 줄바꿈된다는 스크린샷 제보.
+  Advisory/Wellness는 동일 섹션에 "진단 → 큐레이션/설계 → 실행 →
+  지속관리"만 쓰는데 Academy만 뒤에 불필요한 절이 붙어있었던 게 원인 —
+  실측(1062px vs 가용 327px, 3줄 이상 필요) 확인 후 다른 두 페이지와
+  동일하게 축약. 동일 패턴의 다른 헤딩 전수 측정 결과 이 건이 유일한
+  이상치였음(나머지는 전부 2줄 이내로 자연스럽게 래핑).
+- 사용자가 "스마트폰에서 정렬이 제각각(가운데/왼쪽 섞임), 기본 정렬로
+  통일해달라"고 요청 → 범위 확인 질문(메인 Hero 포함 여부)에 "전체 다"로
+  답변 → 구체적 정렬 방식 재확인 질문에서 "왼쪽 정렬"이 아니라
+  **"양쪽정렬(justify)"**을 명시적으로 선택(두 방식의 시각적 차이를
+  미리보기로 보여준 뒤 확정).
+- 발견한 실제 비일관성: 랜딩의 Hero/Bento/Trust/Process/Loop/FAQ 섹션
+  인트로(배지+제목+설명)는 전부 `text-center`인데, VerticalHighlight
+  (Academy/Advisory/Wellness 소개 블록)만 유일하게 암묵적 왼쪽 정렬
+  (`items-start`, text-align 클래스 없음) — 이게 "제각각" 느낌의 원인.
+  상세 페이지는 공용 `SectionHeading`이 전부 `text-center`라 자체는
+  일관됐으나 랜딩과 다른 방식.
+- 수정: 코드베이스 전체에서 `text-center` 완전 제거, 전부 `text-justify`로
+  교체(랜딩 6개 섹션 인트로 전체, FAQ 아코디언 질문/답변 양쪽, 상세 페이지
+  `SectionHeading`/`Hero`/`CtaSection`/`OfferingsGrid` note, 그리고 본래
+  왼쪽 정렬이던 `VerticalHighlight`에도 명시적 `text-justify` 추가해 전부
+  동일하게 통일). `word-break`와 마찬가지로 `text-align`도 상속 속성이라
+  섹션 최상위 컨테이너 한 곳에만 걸어 하위 텍스트까지 전파되도록 활용.
+  - 블록 자체의 중앙/좌측 배치(`mx-auto`/`items-center` 등 flex 레이아웃)는
+    건드리지 않음 — 이번 요청은 텍스트 정렬(text-align)에 대한 것이고
+    버튼 그룹이 가운데 배치되는 등은 별개의, 문제 없는 패턴이라 판단.
+  - detail Hero.tsx의 `mx-auto max-w-2xl md:mx-0`(문단 중앙 배치)와
+    `justify-center md:justify-start`(버튼 반응형 분기)도 제거해 모바일/
+    데스크톱 분기 없이 완전히 통일.
+  - Footer 브랜드 블록(`items-start text-left`)은 그대로 유지 — 바로 이전
+    세션에서 사용자가 명시적으로 요청한 "로고 왼쪽정렬"이라 이번 justify
+    통일 범위에서 의도적으로 제외.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공,
+  `out/` 산출물 전수 검사로 `text-center` 0건, `text-justify` 전 페이지
+  반영 확인.
+- 다음에 필요한 것: 사용자가 실제 화면에서 justify 적용 결과 확인 —
+  특히 짧은 제목은 1줄이라 justify와 왼쪽 정렬이 시각적으로 동일하게
+  보이고, 2줄 이상 래핑되는 문단에서만 양쪽 끝 맞춤 효과가 보일 것.

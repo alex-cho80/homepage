@@ -31,7 +31,7 @@ export default function FaqSection() {
   return (
     <section className="bg-cx-bg-alt px-6 py-16 sm:px-[120px] sm:py-[120px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-justify">
           <SectionBadge>FAQ</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">자주 묻는 질문</h2>
         </div>
@@ -47,7 +47,7 @@ export default function FaqSection() {
                   type="button"
                   onClick={() => setOpenIndex(open ? null : i)}
                   aria-expanded={open}
-                  className="flex w-full items-center justify-between gap-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 text-justify"
                 >
                   <span className="break-keep text-base font-bold text-white">{faq.question}</span>
                   <img

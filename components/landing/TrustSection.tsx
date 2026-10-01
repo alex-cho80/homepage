@@ -22,7 +22,7 @@ export default function TrustSection() {
   return (
     <section className="bg-cx-bg px-6 py-20 sm:px-[120px] sm:py-[140px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-justify">
           <SectionBadge>WHY CONNECTX</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">왜 ConnectX인가</h2>
         </div>

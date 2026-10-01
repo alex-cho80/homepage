@@ -25,7 +25,7 @@ export default function LoopSection() {
   return (
     <section className="bg-cx-bg-alt px-6 py-20 sm:px-[120px] sm:py-[120px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-justify">
           <SectionBadge>CONNECT LOOP</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">
             성장하는 일에도, 건강한 일상에도 필요한 연결
@@ -55,7 +55,7 @@ export default function LoopSection() {
           ))}
         </div>
 
-        <div className="w-full max-w-[800px] rounded-2xl border border-dashed border-connectx-teal/40 bg-connectx-teal/[0.05] p-6 text-center sm:p-8">
+        <div className="w-full max-w-[800px] rounded-2xl border border-dashed border-connectx-teal/40 bg-connectx-teal/[0.05] p-6 text-justify sm:p-8">
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             앞으로의 방향
           </p>

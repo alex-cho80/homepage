@@ -24,7 +24,7 @@ export default function FaqSection({ section, tone }: { section: FaqContent; ton
                   type="button"
                   onClick={() => setOpenIndex(open ? null : i)}
                   aria-expanded={open}
-                  className="flex w-full items-center justify-between gap-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 text-justify"
                 >
                   <span className="break-keep text-[15px] font-semibold text-white">{item.question}</span>
                   <img
@@ -35,7 +35,7 @@ export default function FaqSection({ section, tone }: { section: FaqContent; ton
                   />
                 </button>
                 {open && (
-                  <p className="mt-4 break-keep text-[15px] leading-[1.6] text-cx-muted">{item.answer}</p>
+                  <p className="mt-4 break-keep text-justify text-[15px] leading-[1.6] text-cx-muted">{item.answer}</p>
                 )}
               </div>
             );

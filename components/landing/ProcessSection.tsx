@@ -31,7 +31,7 @@ export default function ProcessSection() {
   return (
     <section className="bg-cx-bg-alt px-6 py-20 sm:px-[120px] sm:py-[120px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-justify">
           <SectionBadge>METHODOLOGY</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">이렇게 함께합니다</h2>
           <p className="max-w-[520px] break-keep text-base text-cx-muted">

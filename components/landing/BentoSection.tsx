@@ -44,7 +44,7 @@ export default function BentoSection() {
   return (
     <section id="verticals" className="bg-cx-bg px-6 py-20 sm:px-[120px] sm:py-[140px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-justify">
           <SectionBadge>VERTICALS</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">필요한 서비스를 선택하세요</h2>
         </div>

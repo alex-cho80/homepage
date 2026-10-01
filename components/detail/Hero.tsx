@@ -9,7 +9,7 @@ export default function Hero({ section }: { section: HeroContent }) {
   return (
     <section id={section.id} className="bg-cx-bg">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-24 sm:py-28 md:grid-cols-2 md:gap-20">
-        <div className="text-center md:text-left">
+        <div className="text-justify">
           <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-connectx-teal">
             {section.label}
           </p>
@@ -21,10 +21,10 @@ export default function Hero({ section }: { section: HeroContent }) {
               {section.positionBadge}
             </p>
           )}
-          <p className="mx-auto mt-6 max-w-2xl break-keep text-[17px] leading-[1.6] text-cx-muted md:mx-0">
+          <p className="mt-6 break-keep text-[17px] leading-[1.6] text-cx-muted">
             {section.subtitle}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             {section.ctas.map((cta) => (
               <a
                 key={cta.label}

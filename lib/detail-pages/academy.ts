@@ -51,7 +51,7 @@ export const academyContent: DetailPageContent = {
     {
       type: "process",
       id: "process",
-      heading: "진단 → 큐레이션/설계 → 실행 → 지속관리, Academy에서는 이렇게 이어집니다",
+      heading: "진단 → 큐레이션/설계 → 실행 → 지속관리",
       steps: [
         { label: "진단", body: "현재 역량과 목표(취업/이직/재직자 역량강화)를 먼저 확인합니다." },
         {

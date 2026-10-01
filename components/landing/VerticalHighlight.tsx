@@ -28,7 +28,7 @@ export default function VerticalHighlight({
           reverse ? "sm:flex-row-reverse" : "sm:flex-row"
         }`}
       >
-        <div className="flex flex-1 flex-col items-start gap-8">
+        <div className="flex flex-1 flex-col items-start gap-8 text-justify">
           <div className="flex flex-col items-start gap-4">
             <SectionBadge>{badge}</SectionBadge>
             <h2 className="break-keep text-3xl font-bold leading-tight text-white sm:text-[38px]">{title}</h2>
