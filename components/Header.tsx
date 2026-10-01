@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { brandUnits } from "@/lib/brand-units";
-import { generalInquiryMailto } from "@/lib/mailto";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,34 +26,26 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-3">
-          <a
-            href={generalInquiryMailto}
-            className="rounded-md bg-connectx-blue px-5 py-2.5 text-sm font-bold text-white transition hover:opacity-90"
-          >
-            상담 신청
-          </a>
-          <button
-            type="button"
-            aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="flex size-9 shrink-0 items-center justify-center rounded-md border border-cx-border text-white sm:hidden"
-          >
-            {open ? (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                <line x1="4" y1="4" x2="20" y2="20" />
-                <line x1="20" y1="4" x2="4" y2="20" />
-              </svg>
-            ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            )}
-          </button>
-        </div>
+        <button
+          type="button"
+          aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="flex size-9 shrink-0 items-center justify-center rounded-md border border-cx-border text-white sm:hidden"
+        >
+          {open ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+              <line x1="4" y1="4" x2="20" y2="20" />
+              <line x1="20" y1="4" x2="4" y2="20" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          )}
+        </button>
       </div>
 
       {open && (
