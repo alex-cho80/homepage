@@ -381,3 +381,19 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공, `out/`
   산출물에서 `<header>` 태그 범위 내 "상담 신청" 텍스트가 더 이상 없음을 확인.
 - 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — Footer CTA 배너 제거
+
+- 사용자 요청: 페이지 하단 "필요한 서비스가 궁금하신가요? / 무료 상담 신청" 배너
+  영역을 없애는 게 맞는 것 같다.
+- `components/Footer.tsx` 상단의 배경 이미지 + 헤드라인 + 설명 + CTA 버튼 블록
+  전체를 제거하고, 남은 하단부(로고 소개, Services/Company 링크, 저작권·
+  개인정보처리방침)만 유지. 제거된 영역에서만 쓰이던 배경 이미지
+  (`public/images/landing/footer-cta-bg.webp`, 다른 곳에서 미사용 확인 후
+  git rm으로 삭제)도 함께 정리.
+- 결과적으로 사이트 전체에서 "신청/상담" CTA는 Hero(랜딩 1곳) + 각 서비스 상세
+  페이지(Hero + 하단, 2곳)로만 남음 — 전역 Header/Footer 중복 CTA는 이번과
+  지난 GNB 제거 건으로 모두 정리됨.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공, `out/`
+  산출물에서 해당 문구가 더 이상 없음을 확인.
+- 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
