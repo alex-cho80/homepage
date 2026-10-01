@@ -23,8 +23,6 @@ export default function Home() {
         title="실무에서 통하는 인프라/보안 역량"
         description="대규모 트래픽 설계와 침해 사고 대응은 이론만으로 익히기 어렵습니다. ConnectX Academy는 실전 인프라 구축과 침해 실습 시나리오를 바탕으로 현업 경험을 가진 강사진이 직접 설계하고 밀착 교육합니다."
         chips={["현직 실무자 강의", "실습 중심 커리큘럼", "수료 후 네트워크"]}
-        ctaLabel="커리큘럼 살펴보기"
-        ctaHref="/academy"
         image="/images/landing/academy.webp"
         imageAlt="서버랙 앞에서 실무 교육을 받는 모습"
         bg="bg-alt"
@@ -34,8 +32,6 @@ export default function Home() {
         title="우리 회사에 맞는 IT 인프라와 보안, 함께 설계합니다"
         description="전담 IT·보안 책임자를 채용하기 부담스러운 중소기업과 스타트업을 위해, ConnectX가 인프라 아키텍처 수립과 보안 체계 대응을 정기 자문 파트너십으로 함께합니다."
         chips={["인프라+보안 통합 진단", "기업 규모 맞춤 제안", "정기 자문 리테이너"]}
-        ctaLabel="Advisory 자세히 보기"
-        ctaHref="/advisory"
         image="/images/landing/advisory.webp"
         imageAlt="인프라 아키텍처를 브리핑하는 모습"
         reverse
@@ -46,8 +42,6 @@ export default function Home() {
         title="선택 기준을 안내하는 건강기능식품"
         description="영양제, 어떤 기준으로 선택하시나요? ConnectX는 브랜드·제품 정보·표시 성분을 정리해 비교할 수 있도록 돕고, 필요와 상황에 맞는 카테고리를 안내합니다."
         chips={["표시 성분·정보 비교", "카테고리별 큐레이션", "구매 전 상담 지원"]}
-        ctaLabel="맞춤 추천 받기"
-        ctaHref="/wellness"
         image="/images/landing/wellness.webp"
         imageAlt="영양제 상담을 받는 모습"
         bg="bg-alt"

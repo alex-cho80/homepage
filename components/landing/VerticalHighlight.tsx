@@ -1,13 +1,10 @@
 import SectionBadge from "./SectionBadge";
-import PrimaryButton from "./PrimaryButton";
 
 type Props = {
   badge: string;
   title: string;
   description: string;
   chips: string[];
-  ctaLabel: string;
-  ctaHref: string;
   image: string;
   imageAlt: string;
   reverse?: boolean;
@@ -19,8 +16,6 @@ export default function VerticalHighlight({
   title,
   description,
   chips,
-  ctaLabel,
-  ctaHref,
   image,
   imageAlt,
   reverse = false,
@@ -49,7 +44,6 @@ export default function VerticalHighlight({
               </span>
             ))}
           </div>
-          <PrimaryButton href={ctaHref}>{ctaLabel}</PrimaryButton>
         </div>
         <div className="h-[280px] w-full flex-1 overflow-hidden rounded-[20px] border border-cx-border sm:h-[400px]">
           <img src={image} alt={imageAlt} className="size-full object-cover" />

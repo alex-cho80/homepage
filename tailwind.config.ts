@@ -16,7 +16,7 @@ const config: Config = {
         "cx-card": "#11142f",
         "cx-border": "#1d234a",
         "cx-muted": "#94a3b8",
-        "cx-dim": "#64748b",
+        "cx-dim": "#7587a0",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "var(--font-noto-kr)", "sans-serif"],

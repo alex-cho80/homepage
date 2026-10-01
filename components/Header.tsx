@@ -31,7 +31,7 @@ export default function Header() {
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex size-9 shrink-0 items-center justify-center rounded-md border border-cx-border text-white sm:hidden"
+          className="flex size-11 shrink-0 items-center justify-center rounded-md border border-cx-border text-white sm:hidden"
         >
           {open ? (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>

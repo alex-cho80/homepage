@@ -445,3 +445,69 @@ Claude Code는 이미지 생성 도구가 없어(사진·AI 생성 이미지를 
 - 다음에 필요한 것: 사용자가 실제 모바일에서 다시 확인 — 그래도 "Advisory
   자세히 보기" 버튼이 커 보이면 캐시 문제이니 강력 새로고침/시크릿창으로
   재확인 요청 필요.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — VerticalHighlight "바로가기" 버튼 제거 + ui-ux-pro-max 스킬 기반 점검
+
+- 사용자가 스크린샷(커리큘럼 살펴보기/Advisory 자세히 보기/맞춤 추천 받기 버튼)과
+  함께 "메인페이지에서 바로가기를 빼는 게 나을 것 같다"고 요청, 동시에
+  "ui/ux pro max skill 사용해서 수정 + 전반적으로 pc/mobile ui/ux 재검토"
+  요청.
+- **스킬 호출 관련 메모**: `Skill({skill: "ui-ux-pro-max"})` 및
+  `project:ui-ux-pro-max` 둘 다 "Unknown skill" 에러 — 이전 세션에서
+  `/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill`가
+  "/plugin isn't available"로 실패했음에도 한 번 "스킬 발견됨" 알림이 떴던
+  잔재로 추정. 실제로는 `/home/devops/project/.claude/skills/ui-ux-pro-max/`에
+  SKILL.md + 데이터(CSV)/검색 스크립트(Python)가 파일로는 존재해서, Skill
+  도구 대신 SKILL.md를 직접 읽고 `python3 scripts/search.py "..." --domain ux`
+  를 직접 실행해 가이드라인을 수동으로 적용함.
+- **버튼 제거**: `components/landing/VerticalHighlight.tsx`에서 CTA
+  (`ctaLabel`/`ctaHref` prop + 내부 `PrimaryButton` 렌더링)를 완전히 제거.
+  더 이상 쓰이지 않는 `components/landing/PrimaryButton.tsx` 삭제,
+  `app/page.tsx`의 VerticalHighlight 호출 3곳에서 해당 prop 제거. 이
+  섹션들의 서비스 진입 경로는 바로 위 `BentoSection`의 "자세히 보기 →"
+  링크로 충분하다고 판단(동일 서비스로의 중복 진입 경로 제거).
+- **스킬 체크리스트 기반 발견 사항 반영** (`ux-guidelines.csv` "touch-target-size"
+  — CRITICAL, "최소 44x44px"): 지난 커밋들에서 모바일 CTA 버튼을
+  `py-2.5 + text-sm`(높이 약 40px)로 줄였던 게 44px 최소 터치 타겟에 약간
+  못 미쳤던 것을 발견 — `py-2.5` → `py-3`(높이 44px)로 조정. 적용 범위:
+  `components/landing/HeroSection.tsx` 버튼 2개,
+  `components/detail/ctaButtonStyles.ts`(Academy/Advisory/Wellness 공용,
+  3페이지 전부 반영). 햄버거 메뉴 버튼도 `size-9`(36px) → `size-11`(44px).
+- **의도적으로 반영 안 한 항목**: 스킬 체크리스트의 "readable-font-size —
+  모바일 본문 최소 16px" (HIGH)는 사이트 전반(Trust/Loop/Process 설명,
+  FAQ 답변, 상세페이지 본문 등)이 대부분 14~15px를 쓰고 있어 정면으로
+  위배되지만, 이는 Figma에서 가져온 기존 디자인 시스템 전체의 타이포 스케일
+  문제라 이번 범위(버튼 정리)를 넘어서는 전체 재설계에 해당 — 사용자 확인
+  없이 임의로 사이트 전체 본문 폰트 크기를 올리지 않음. 필요하면 별도 작업
+  으로 논의 요청.
+- **확인한 항목(문제 없음)**: `outline-none` 전역 미사용(포커스 상태 보존),
+  고정 큰 `w-[...]px` 중 모바일에서 가로 스크롤을 유발할 요소 없음(전부
+  `max-w-[...]` + `w-full` 조합), 터치 타겟 간 gap 전부 8px 이상.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공, `out/`
+  산출물에서 버튼 3개 제거 확인 + `py-3`/`size-11` 터치 타겟 수정 렌더링 확인.
+- 다음에 필요한 것: 사용자가 실제 모바일/PC에서 재확인. 본문 폰트 크기(16px)
+  이슈를 다룰지는 사용자 결정 필요.
+
+## 2026-10-01 — Claude Code (개발/디자인팀장) — ui-ux-pro-max 데이터 기반 추가 점검(색상 대비)
+
+- `uipro-cli`(npm)로 설치한 `ui-ux-pro-max` 스킬을 Skill 도구로 호출 시도 —
+  reload 이후에도 "Unknown skill" 에러 지속. 설치 파일(SKILL.md, 11개 CSV,
+  스택별 CSV 13개, 검색 스크립트)은 `uipro init --ai claude`가 생성해야 할
+  목록과 정확히 일치해 설치 자체는 정상 — 이 세션 환경(Claude Agent SDK
+  기반)이 프로젝트 레벨 `.claude/skills/`를 Skill 도구 레지스트리에 로드하지
+  않는 환경 제약으로 결론. 사용자에게 설명 후, 앞으로도 SKILL.md/search.py를
+  직접 읽고 실행하는 방식으로 계속 진행하기로 합의.
+- 해당 방식으로 `landing`/`web` 도메인 추가 조회 + 코드베이스 직접 대조:
+  - 시맨틱 HTML(`div onClick` 안티패턴), 아이콘 `aria-hidden`/이미지 `alt`,
+    `outline-none` 미사용 등은 전부 이미 준수 상태 확인(문제 없음).
+  - **색상 대비 CRITICAL 항목 위반 발견**: `tailwind.config.ts`의
+    `cx-dim`(#64748b, Footer 저작권/BentoSection 태그/OfferingsGrid 안내
+    문구/개인정보처리방침 날짜 등 5곳에 사용)이 배경(`cx-bg` #050714) 대비
+    WCAG AA 최소 기준(4.5:1)에 못 미치는 4.21:1로 계산됨(파이썬으로 상대
+    휘도/대비비 직접 계산). 모두 12~14px 작은 텍스트라 완화 기준(3:1)도
+    적용 안 됨.
+  - 수정: `cx-dim` 값을 `#64748b` → `#7587a0`로 소폭 밝게 조정(대비비
+    5.47:1로 통과). 토큰 자체를 바꿔 5곳 전부 한 번에 수정, 디자인 의도
+    (가장 옅은 보조 텍스트)는 유지하면서 육안상 차이는 미미함.
+- 검증: `tsc --noEmit` 통과, `npm run build` 정적 export 10페이지 성공.
+- 다음에 필요한 것: 없음 — 커밋/푸시 대기 중.
