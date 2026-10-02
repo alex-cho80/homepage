@@ -27,7 +27,7 @@ export default function LoopSection() {
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-16 sm:gap-20">
         <div className="flex flex-col items-center gap-4 text-left">
           <SectionBadge>CONNECT LOOP</SectionBadge>
-          <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">
+          <h2 className="break-keep text-center text-3xl font-semibold text-white sm:text-[44px]">
             성장하는 일에도, 건강한 일상에도 필요한 연결
           </h2>
           <p className="max-w-[560px] break-keep text-base text-cx-muted">

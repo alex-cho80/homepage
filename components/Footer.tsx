@@ -37,11 +37,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-16 flex max-w-[1200px] flex-col items-start justify-between gap-3 text-xs text-cx-dim sm:flex-row sm:items-center">
+        <div className="mx-auto mt-16 max-w-[1200px] text-xs text-cx-dim">
           <p>© {new Date().getFullYear()} ConnectX. All rights reserved.</p>
-          <Link href="/privacy" className="font-bold transition hover:text-white">
-            개인정보처리방침
-          </Link>
         </div>
       </div>
     </footer>

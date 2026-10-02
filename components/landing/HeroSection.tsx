@@ -27,7 +27,7 @@ export default function HeroSection() {
 
       <div className="relative flex w-full max-w-[800px] flex-col items-center gap-8 text-left">
         <SectionBadge>CONNECTX SYNERGY</SectionBadge>
-        <h1 className="break-keep text-5xl font-extrabold leading-[1.15] text-white sm:text-[80px]">
+        <h1 className="break-keep text-center text-5xl font-extrabold leading-[1.15] text-white sm:text-[80px]">
           연결이 만드는
           <span className="text-connectx-teal"> 변화</span>
         </h1>

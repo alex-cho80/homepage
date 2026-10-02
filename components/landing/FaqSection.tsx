@@ -31,7 +31,7 @@ export default function FaqSection() {
   return (
     <section className="bg-cx-bg-alt px-6 py-16 sm:px-[120px] sm:py-[120px]">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 sm:gap-16">
-        <div className="flex flex-col items-center gap-4 text-left">
+        <div className="flex flex-col items-center gap-4 text-center">
           <SectionBadge>FAQ</SectionBadge>
           <h2 className="break-keep text-3xl font-semibold text-white sm:text-[44px]">자주 묻는 질문</h2>
         </div>
